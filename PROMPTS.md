@@ -134,3 +134,7 @@ Let's ensure we don't break the page in the middle of a section when generating 
 ## 28
 
 I think there's a problem with summary section. After summary we had a page break, why?
+
+## 29
+
+Can we make the font smaller for the bullet points of experience? It is even bigger than the summary font size

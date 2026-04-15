@@ -282,7 +282,10 @@ export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSiz
             break-inside: avoid-page;
             page-break-inside: avoid;
           }
-          li { margin: 4px 0; }
+          li {
+            margin: 4px 0;
+            font-size: 12px;
+          }
           .summary, .flat-list { font-size: 13px; }
           .testimonial { font-size: 12px; color: #334155; }
         </style>
