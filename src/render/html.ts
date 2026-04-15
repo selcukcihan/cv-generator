@@ -145,7 +145,9 @@ function renderReferences(cv: RenderableCv): string {
   return cv.references
     .map((reference) => {
       const meta = [reference.title, reference.contact].filter(nonEmpty).join(" | ");
-      const detailItems = [reference.summary].filter(nonEmpty);
+      const testimonial = nonEmpty(reference.testimonial)
+        ? `<blockquote class="testimonial">${escapeHtml(reference.testimonial)}</blockquote>`
+        : "";
 
       return `
         <article class="entry">
@@ -155,7 +157,7 @@ function renderReferences(cv: RenderableCv): string {
               ${nonEmpty(meta) ? `<div class="entry-subtitle">${escapeHtml(meta)}</div>` : ""}
             </div>
           </div>
-          ${renderBullets(detailItems)}
+          ${testimonial}
         </article>
       `;
     })
@@ -249,9 +251,16 @@ export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSiz
           a { color: inherit; text-decoration: none; }
           a:hover { text-decoration: underline; }
           p { margin: 0; }
+          blockquote {
+            margin: 8px 0 0;
+            padding: 10px 12px;
+            border-left: 3px solid var(--accent);
+            background: #f8fafc;
+          }
           ul { margin: 8px 0 0 18px; padding: 0; }
           li { margin: 4px 0; }
           .summary, .flat-list { font-size: 13px; }
+          .testimonial { font-size: 12px; color: #334155; }
         </style>
       </head>
       <body>

@@ -10,7 +10,7 @@ type CandidateProfile = {
     name?: string;
     title?: string;
     contact?: string;
-    summary?: string;
+    testimonial?: string;
   }>;
 };
 
@@ -21,7 +21,7 @@ export function createRenderableCv(generated: Omit<RenderableCv, "summary" | "re
         name: reference.name ?? "",
         title: reference.title ?? "",
         contact: reference.contact ?? "",
-        summary: reference.summary ?? ""
+        testimonial: reference.testimonial ?? ""
       }))
     : [];
 

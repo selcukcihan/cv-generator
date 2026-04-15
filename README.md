@@ -19,7 +19,7 @@ Profile behavior:
 - references are stored in the profile and rendered directly
 - the profile schema is intentionally minimal and follows the actual data shape used in `candidate-profile.yaml`
 - experience entries are minimal: title, company, dates, URL, and descriptions
-- references use name, title, contact, and summary
+- references use name, title, contact, and testimonial
 
 ## Current Provider Support
 

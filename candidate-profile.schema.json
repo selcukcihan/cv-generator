@@ -177,7 +177,7 @@
         "name",
         "title",
         "contact",
-        "summary"
+        "testimonial"
       ],
       "properties": {
         "name": {
@@ -190,7 +190,7 @@
         "contact": {
           "$ref": "#/$defs/nullable_string"
         },
-        "summary": {
+        "testimonial": {
           "$ref": "#/$defs/nullable_string"
         }
       }

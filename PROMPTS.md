@@ -114,3 +114,7 @@ Let's drop relevance from certifications
 ## 23
 
 Any links must be rendered without the protocol, the actual link should have the protocol like https but it should not be rendered, so for example selcukcihan.com instead of https://selcukcihan.com
+
+## 24
+
+The summary section in references is not a summary actually, it is what the reference had to tell about the CV owner. So it's like testimonial, we should name it as such and also render it without a bullet point but maybe in a style to make it stand out as a referral/testimonial

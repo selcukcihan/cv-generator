@@ -35,7 +35,7 @@ export type CvReferenceEntry = {
   name: string;
   title: string;
   contact: string;
-  summary: string;
+  testimonial: string;
 };
 
 export type CvExtraSection = {
