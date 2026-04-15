@@ -108,12 +108,12 @@ skills:
 
 references:
   - name: "Daniel Vliegenthart"
-    title: "Team Lead"
-    contact: "tellimer.com"
+    title: "Team Lead, Meta"
+    contact: "daniel.vliegenthart@gmail.com"
     testimonial: "I've been most impressed by his exceptional ability to tackle every phase of software development with in-depth knowledge, confidence and clear communication. I cannot emphasize enough how good Selcuk is at communicating in a clear and structured manner."
   - name: "Ian Watt"
     title: "Co-founder, Tellimer"
-    contact: "tellimer.com"
+    contact: "ian.watt@tellimer.com"
     testimonial: "He was the perfect remote contractor in many ways. His communication skills are top, he is very much a self-starter who can get stuck in on work with minimal guidance or oversight, and his code quality (and documentation!) is exceptional."
   - name: "Erdem Kurul"
     title: "Software Development Manager"
