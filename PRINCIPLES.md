@@ -46,6 +46,7 @@ The generated CV should:
 - avoid decorative structure that may break ATS parsing
 - present the strongest evidence early
 - sound specific and grounded, not generic or hype-driven
+- use a minimal contact block with email and one generic URL
 
 The generated CV must not:
 
@@ -64,8 +65,8 @@ Use standard section names when those sections exist:
 - Summary
 - Experience
 - Education
-- Projects
 - Skills
+- References
 
 Default order:
 
@@ -73,16 +74,12 @@ Default order:
 2. Summary
 3. Experience
 4. Education
-5. Projects
-6. Skills
+ 5. Skills
+ 6. References
 
 You may reorder sections only when doing so materially improves relevance for the target role.
 
-Examples:
-
-- New grad: move `Projects` above `Experience` if projects carry the strongest signal.
-- Experienced engineer: de-emphasize `Education`.
-- Career pivot: move the most relevant proof higher.
+Experienced candidates should usually emphasize `Experience` first and keep supporting sections compact.
 
 ### Required: ATS Safety
 
@@ -123,13 +120,21 @@ If no summary is provided, omit the summary section.
 
 Experience is the highest-value section for most candidates.
 
-Each bullet should show business or product value created through technical work.
+Each experience item should be represented with:
+
+- title
+- company
+- dates
+- optional URL
+- a list of concise descriptions
+
+Descriptions should show business or product value created through technical work.
 
 Preferred bullet pattern:
 
 `[Strong action verb] + [what changed] + [how it was done] + [scope / metric / constraint]`
 
-Good bullets usually include one or more of:
+Good descriptions usually include one or more of:
 
 - measurable impact
 - scale
@@ -139,7 +144,7 @@ Good bullets usually include one or more of:
 - reliability or performance improvement
 - business outcome
 
-Bad bullets usually focus only on:
+Bad descriptions usually focus only on:
 
 - tasks
 - participation
@@ -150,8 +155,8 @@ Bad bullets usually focus only on:
 
 Within each role:
 
-- place the strongest and most relevant bullets first
-- do not order bullets purely by chronology
+- place the strongest and most relevant descriptions first
+- do not order descriptions purely by chronology
 
 Across the CV:
 
@@ -180,7 +185,7 @@ If references are provided in the candidate input, include a references section.
 References must:
 
 - come directly from user-provided data
-- preserve factual contact and relationship details
+- preserve factual name, title, contact, and summary details
 - not be invented, expanded, or paraphrased into stronger claims
 
 ### Required: Tailoring
@@ -221,10 +226,6 @@ Include:
 - email
 - one generic URL when available
 
-Include only if clearly helpful:
-
-- location
-
 Exclude low-quality or redundant links that weaken the application.
 
 ### Preferred: Quantification
@@ -249,20 +250,6 @@ Useful evidence types:
 If exact numbers are unavailable, use bounded or directional language only if justified by the input.
 
 ### Preferred: Project Selection
-
-Projects matter most for:
-
-- new grads
-- career pivots
-- weak direct experience matches
-- roles where side work is the strongest evidence
-
-Project bullets should favor:
-
-- initiative
-- interesting technical decisions
-- shipped outcomes
-- depth over generic app descriptions
 
 ### Preferred: Scannability
 
@@ -326,10 +313,9 @@ Extract:
 
 - candidate identity
 - roles, dates, titles, employers
-- achievements
+- experience descriptions
 - technologies
 - education
-- projects
 - target role or job description
 
 ### Step 2: Rank Evidence
@@ -343,11 +329,7 @@ Rank candidate evidence by:
 
 ### Step 3: Choose Section Strategy
 
-Select section order based on candidate type:
-
-- experienced candidate: `Experience` dominates
-- new grad: `Projects` may move higher
-- pivot candidate: surface strongest relevant proof first
+Select section order that keeps `Experience` dominant and supporting sections compact.
 
 ### Step 4: Draft Summary
 
@@ -357,10 +339,10 @@ Use the user-provided summary as-is when present. Do not generate or rewrite a s
 
 For each role:
 
-- choose the most relevant bullets
-- rewrite bullets to lead with outcome
+- choose the most relevant descriptions
+- rewrite descriptions to lead with outcome
 - embed technologies naturally when relevant
-- place the best bullet first
+- place the best description first
 
 ### Step 6: Add Supporting Sections
 
@@ -368,7 +350,6 @@ Add:
 
 - summary only if user-provided
 - education if relevant or expected
-- projects if they improve fit
 - skills as a flat relevant list
 - references if provided
 
@@ -380,9 +361,8 @@ Compression order:
 
 1. remove irrelevant details
 2. shorten old roles
-3. reduce weak project content
-4. trim skills to relevant items
-5. shorten wording without losing meaning
+3. trim skills to relevant items
+4. shorten wording without losing meaning
 
 ### Step 8: Validate
 
@@ -399,7 +379,7 @@ A valid CV should pass all checks below.
 - If a summary is present, it matches user-provided text rather than generated text.
 - The top of the CV contains the strongest evidence.
 - The CV uses standard section names.
-- The bullets describe outcomes, not just responsibilities.
+- The experience descriptions describe outcomes, not just responsibilities.
 - The skills section contains relevant and believable skills.
 - Irrelevant or filler content has been removed.
 - The document is easy to read in plain text.
@@ -409,7 +389,7 @@ A valid CV should pass all checks below.
 
 - A recruiter could understand candidate fit in under 10 seconds.
 - If a summary is present, it sounds specific to this candidate.
-- The first bullet under each recent role is one of the strongest bullets.
+- The first description under each recent role is one of the strongest descriptions.
 - Metrics appear where credible.
 - Technologies appear in context, not as random keyword stuffing.
 - Older experience is compressed appropriately.

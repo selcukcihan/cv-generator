@@ -73,3 +73,14 @@ We must drop phone as well
 
 Let's also drop:
 awards, interests, targeting (whole section)
+
+## 18
+
+Let's drop location as well. Also for references, each reference has a name, title, contact field and a summary (of their recommendation).
+
+For experience items, keep it simple as well:
+- title
+- company
+- dates
+- url
+- list of descriptions (which will summarize the relevant work done in that company)

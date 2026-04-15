@@ -76,7 +76,6 @@
       "required": [
         "full_name",
         "current_title",
-        "location",
         "email",
         "url"
       ],
@@ -86,9 +85,6 @@
           "minLength": 1
         },
         "current_title": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "location": {
           "$ref": "#/$defs/nullable_string"
         },
         "email": {
@@ -103,128 +99,30 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "company",
-        "company_type",
-        "industry",
         "title",
-        "location",
-        "employment_type",
-        "start_date",
-        "end_date",
-        "still_employed",
-        "team_or_org",
-        "scope",
-        "achievements",
-        "additional_notes"
+        "company",
+        "dates",
+        "url",
+        "descriptions"
       ],
       "properties": {
-        "company": {
-          "type": "string",
-          "minLength": 1
-        },
-        "company_type": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "industry": {
-          "$ref": "#/$defs/nullable_string"
-        },
         "title": {
           "type": "string",
           "minLength": 1
         },
-        "location": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "employment_type": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "start_date": {
+        "company": {
           "type": "string",
           "minLength": 1
         },
-        "end_date": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "still_employed": {
-          "type": "boolean"
-        },
-        "team_or_org": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "scope": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "responsibilities",
-            "product_or_platform_context",
-            "users_or_customers",
-            "scale",
-            "ownership_area"
-          ],
-          "properties": {
-            "responsibilities": {
-              "$ref": "#/$defs/string_list"
-            },
-            "product_or_platform_context": {
-              "$ref": "#/$defs/nullable_string"
-            },
-            "users_or_customers": {
-              "$ref": "#/$defs/nullable_string"
-            },
-            "scale": {
-              "$ref": "#/$defs/nullable_string"
-            },
-            "ownership_area": {
-              "$ref": "#/$defs/nullable_string"
-            }
-          }
-        },
-        "achievements": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/achievement_item"
-          }
-        },
-        "additional_notes": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "awards_or_recognition"
-          ],
-          "properties": {
-            "awards_or_recognition": {
-              "$ref": "#/$defs/string_list"
-            }
-          }
-        }
-      }
-    },
-    "achievement_item": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "what_changed",
-        "why_it_mattered",
-        "metric_or_proof",
-        "technologies_used",
-        "scope_or_scale"
-      ],
-      "properties": {
-        "what_changed": {
+        "dates": {
           "type": "string",
           "minLength": 1
         },
-        "why_it_mattered": {
+        "url": {
           "$ref": "#/$defs/nullable_string"
         },
-        "metric_or_proof": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "technologies_used": {
+        "descriptions": {
           "$ref": "#/$defs/string_list"
-        },
-        "scope_or_scale": {
-          "$ref": "#/$defs/nullable_string"
         }
       }
     },
@@ -281,22 +179,22 @@
       "additionalProperties": false,
       "required": [
         "name",
+        "title",
         "contact",
-        "about",
-        "relation"
+        "summary"
       ],
       "properties": {
         "name": {
           "type": "string",
           "minLength": 1
         },
+        "title": {
+          "$ref": "#/$defs/nullable_string"
+        },
         "contact": {
           "$ref": "#/$defs/nullable_string"
         },
-        "about": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "relation": {
+        "summary": {
           "$ref": "#/$defs/nullable_string"
         }
       }

@@ -1,15 +1,14 @@
 export type ContactInfo = {
-  location: string;
   email: string;
   url: string;
 };
 
 export type CvExperienceEntry = {
-  company: string;
   title: string;
+  company: string;
   dates: string;
-  location: string;
-  bullets: string[];
+  url: string;
+  descriptions: string[];
 };
 
 export type CvProjectEntry = {
@@ -34,9 +33,9 @@ export type CvCertificationEntry = {
 
 export type CvReferenceEntry = {
   name: string;
+  title: string;
   contact: string;
-  about: string;
-  relation: string;
+  summary: string;
 };
 
 export type CvExtraSection = {

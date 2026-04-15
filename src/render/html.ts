@@ -14,7 +14,7 @@ function nonEmpty(value: string): boolean {
 }
 
 function renderContactRow(cv: RenderableCv): string {
-  const items = [cv.contact.location, cv.contact.email, cv.contact.url]
+  const items = [cv.contact.email, cv.contact.url]
     .filter(nonEmpty)
     .map((item) => `<span>${escapeHtml(item)}</span>`);
 
@@ -41,7 +41,7 @@ function renderSection(title: string, body: string): string {
 function renderExperience(cv: RenderableCv): string {
   return cv.experience
     .map((entry) => {
-      const meta = [entry.location, entry.dates].filter(nonEmpty).join(" | ");
+      const meta = [entry.dates, entry.url].filter(nonEmpty).join(" | ");
       return `
         <article class="entry">
           <div class="entry-head">
@@ -51,7 +51,7 @@ function renderExperience(cv: RenderableCv): string {
             </div>
             <div class="entry-meta">${escapeHtml(meta)}</div>
           </div>
-          ${renderBullets(entry.bullets)}
+          ${renderBullets(entry.descriptions)}
         </article>
       `;
     })
@@ -126,8 +126,8 @@ function renderSkills(cv: RenderableCv): string {
 function renderReferences(cv: RenderableCv): string {
   return cv.references
     .map((reference) => {
-      const meta = [reference.about, reference.contact].filter(nonEmpty).join(" | ");
-      const detailItems = [reference.relation].filter(nonEmpty);
+      const meta = [reference.title, reference.contact].filter(nonEmpty).join(" | ");
+      const detailItems = [reference.summary].filter(nonEmpty);
 
       return `
         <article class="entry">

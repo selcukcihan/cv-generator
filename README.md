@@ -14,10 +14,12 @@ Profile behavior:
 
 - summary is user-provided, not LLM-generated
 - contact data uses one generic URL field
+- contact data no longer includes location
 - skills are stored and rendered as one flat list
 - references are stored in the profile and rendered directly
 - the profile schema is intentionally minimal and follows the actual data shape used in `candidate-profile.yaml`
-- the profile no longer includes separate targeting, interests, or awards sections
+- experience entries are minimal: title, company, dates, URL, and descriptions
+- references use name, title, contact, and summary
 
 ## Current Provider Support
 

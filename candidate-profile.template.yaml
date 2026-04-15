@@ -9,7 +9,6 @@ schema_version: 1
 basics:
   full_name: "TODO"
   current_title: ""
-  location: ""
   email: ""
   url: ""
 

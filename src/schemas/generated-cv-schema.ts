@@ -18,9 +18,8 @@ export const generatedCvSchema = {
     contact: {
       type: "object",
       additionalProperties: false,
-      required: ["location", "email", "url"],
+      required: ["email", "url"],
       properties: {
-        location: { type: "string" },
         email: { type: "string" },
         url: { type: "string" }
       }
@@ -30,13 +29,13 @@ export const generatedCvSchema = {
       items: {
         type: "object",
         additionalProperties: false,
-        required: ["company", "title", "dates", "location", "bullets"],
+        required: ["title", "company", "dates", "url", "descriptions"],
         properties: {
-          company: { type: "string", minLength: 1 },
           title: { type: "string", minLength: 1 },
+          company: { type: "string", minLength: 1 },
           dates: { type: "string" },
-          location: { type: "string" },
-          bullets: {
+          url: { type: "string" },
+          descriptions: {
             type: "array",
             items: { type: "string", minLength: 1 }
           }
