@@ -1,0 +1,26 @@
+{
+  "name": "cv-generator",
+  "version": "1.0.0",
+  "description": "Structured CV generator inputs and validation",
+  "main": "dist/scripts/generate-cv.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "validate:profile": "npm run build && node dist/scripts/validate-candidate-profile.js candidate-profile.template.yaml",
+    "generate": "npm run build && node dist/scripts/generate-cv.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ajv": "^8.18.0",
+    "dotenv": "^17.4.2",
+    "openai": "^6.34.0",
+    "puppeteer": "^24.41.0",
+    "yaml": "^2.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "typescript": "^6.0.2"
+  }
+}

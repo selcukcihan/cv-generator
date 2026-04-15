@@ -1,0 +1,88 @@
+# yaml-language-server: $schema=./candidate-profile.schema.json
+#
+# Candidate profile source-of-truth for CV generation.
+# Fill this with factual information, not polished resume language.
+# Leave unknown values as null or "".
+
+schema_version: 1
+
+basics:
+  full_name: "TODO"
+  preferred_name: ""
+  current_title: ""
+  location: ""
+  email: ""
+  phone: ""
+  linkedin: ""
+  github: ""
+  personal_website: ""
+  work_authorization_note: ""
+
+targeting:
+  role_titles: []
+  seniority_target: ""
+  industries: []
+  company_types: []
+  location_preferences: []
+  roles_to_avoid: []
+  tailoring_notes:
+    preferred_work: ""
+    de_emphasize: ""
+    highlight_strengths: []
+    preferred_keywords: []
+
+summary_inputs:
+  years_of_experience: null
+  core_specialty: ""
+  secondary_specialties: []
+  primary_domains: []
+  best_known_strengths: []
+  leadership_scope: ""
+  differentiators: []
+
+interests:
+  technical: []
+  industry: []
+  relevant_non_technical: []
+
+experience: []
+
+projects: []
+
+education: []
+
+certifications: []
+
+skills:
+  languages: []
+  frameworks_and_libraries: []
+  cloud_and_infrastructure: []
+  data_and_storage: []
+  tooling: []
+  domains: []
+
+public_work:
+  writing: []
+  speaking: []
+  open_source: []
+
+awards: []
+
+generation_preferences:
+  max_length: "one_page"
+  include_summary: true
+  include_projects: "only_when_helpful"
+  include_interests: "only_when_relevant"
+  tone_preferences: []
+  formatting_constraints: []
+  forbidden_content: []
+
+job_target:
+  company: ""
+  role_title: ""
+  job_posting_link: ""
+  repeated_keywords: []
+  must_have_requirements: []
+  nice_to_have_requirements: []
+  core_hiring_problem: ""
+  fit_notes: []

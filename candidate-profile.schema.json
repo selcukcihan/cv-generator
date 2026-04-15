@@ -1,0 +1,854 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./candidate-profile.schema.json",
+  "title": "Candidate Profile",
+  "description": "Structured candidate profile used as the source of truth for CV generation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "basics",
+    "targeting",
+    "summary_inputs",
+    "interests",
+    "experience",
+    "projects",
+    "education",
+    "certifications",
+    "skills",
+    "public_work",
+    "awards",
+    "generation_preferences",
+    "job_target"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "basics": {
+      "$ref": "#/$defs/basics"
+    },
+    "targeting": {
+      "$ref": "#/$defs/targeting"
+    },
+    "summary_inputs": {
+      "$ref": "#/$defs/summary_inputs"
+    },
+    "interests": {
+      "$ref": "#/$defs/interests"
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/experience_item"
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/project_item"
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/education_item"
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/certification_item"
+      }
+    },
+    "skills": {
+      "$ref": "#/$defs/skills"
+    },
+    "public_work": {
+      "$ref": "#/$defs/public_work"
+    },
+    "awards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/award_item"
+      }
+    },
+    "generation_preferences": {
+      "$ref": "#/$defs/generation_preferences"
+    },
+    "job_target": {
+      "$ref": "#/$defs/job_target"
+    }
+  },
+  "$defs": {
+    "nullable_string": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "string_list": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "full_name",
+        "preferred_name",
+        "current_title",
+        "location",
+        "email",
+        "phone",
+        "linkedin",
+        "github",
+        "personal_website",
+        "work_authorization_note"
+      ],
+      "properties": {
+        "full_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "preferred_name": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "current_title": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "location": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "email": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "phone": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "linkedin": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "github": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "personal_website": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "work_authorization_note": {
+          "$ref": "#/$defs/nullable_string"
+        }
+      }
+    },
+    "targeting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role_titles",
+        "seniority_target",
+        "industries",
+        "company_types",
+        "location_preferences",
+        "roles_to_avoid",
+        "tailoring_notes"
+      ],
+      "properties": {
+        "role_titles": {
+          "$ref": "#/$defs/string_list"
+        },
+        "seniority_target": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "industries": {
+          "$ref": "#/$defs/string_list"
+        },
+        "company_types": {
+          "$ref": "#/$defs/string_list"
+        },
+        "location_preferences": {
+          "$ref": "#/$defs/string_list"
+        },
+        "roles_to_avoid": {
+          "$ref": "#/$defs/string_list"
+        },
+        "tailoring_notes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "preferred_work",
+            "de_emphasize",
+            "highlight_strengths",
+            "preferred_keywords"
+          ],
+          "properties": {
+            "preferred_work": {
+              "$ref": "#/$defs/nullable_string"
+            },
+            "de_emphasize": {
+              "$ref": "#/$defs/nullable_string"
+            },
+            "highlight_strengths": {
+              "$ref": "#/$defs/string_list"
+            },
+            "preferred_keywords": {
+              "$ref": "#/$defs/string_list"
+            }
+          }
+        }
+      }
+    },
+    "summary_inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "years_of_experience",
+        "core_specialty",
+        "secondary_specialties",
+        "primary_domains",
+        "best_known_strengths",
+        "leadership_scope",
+        "differentiators"
+      ],
+      "properties": {
+        "years_of_experience": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "core_specialty": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "secondary_specialties": {
+          "$ref": "#/$defs/string_list"
+        },
+        "primary_domains": {
+          "$ref": "#/$defs/string_list"
+        },
+        "best_known_strengths": {
+          "$ref": "#/$defs/string_list"
+        },
+        "leadership_scope": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "differentiators": {
+          "$ref": "#/$defs/string_list"
+        }
+      }
+    },
+    "interests": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "technical",
+        "industry",
+        "relevant_non_technical"
+      ],
+      "properties": {
+        "technical": {
+          "$ref": "#/$defs/string_list"
+        },
+        "industry": {
+          "$ref": "#/$defs/string_list"
+        },
+        "relevant_non_technical": {
+          "$ref": "#/$defs/string_list"
+        }
+      }
+    },
+    "experience_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "company",
+        "company_type",
+        "industry",
+        "title",
+        "location",
+        "employment_type",
+        "start_date",
+        "end_date",
+        "still_employed",
+        "team_or_org",
+        "reporting_context",
+        "scope",
+        "achievements",
+        "additional_notes"
+      ],
+      "properties": {
+        "company": {
+          "type": "string",
+          "minLength": 1
+        },
+        "company_type": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "industry": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "location": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "employment_type": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "start_date": {
+          "type": "string",
+          "minLength": 1
+        },
+        "end_date": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "still_employed": {
+          "type": "boolean"
+        },
+        "team_or_org": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "reporting_context": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "responsibilities",
+            "product_or_platform_context",
+            "users_or_customers",
+            "scale",
+            "team_size",
+            "ownership_area"
+          ],
+          "properties": {
+            "responsibilities": {
+              "$ref": "#/$defs/string_list"
+            },
+            "product_or_platform_context": {
+              "$ref": "#/$defs/nullable_string"
+            },
+            "users_or_customers": {
+              "$ref": "#/$defs/nullable_string"
+            },
+            "scale": {
+              "$ref": "#/$defs/nullable_string"
+            },
+            "team_size": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "ownership_area": {
+              "$ref": "#/$defs/nullable_string"
+            }
+          }
+        },
+        "achievements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/achievement_item"
+          }
+        },
+        "additional_notes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "promotions",
+            "awards_or_recognition",
+            "cross_functional_work",
+            "leadership_or_mentoring",
+            "oncall_or_reliability_work",
+            "reason_for_leaving"
+          ],
+          "properties": {
+            "promotions": {
+              "$ref": "#/$defs/string_list"
+            },
+            "awards_or_recognition": {
+              "$ref": "#/$defs/string_list"
+            },
+            "cross_functional_work": {
+              "$ref": "#/$defs/string_list"
+            },
+            "leadership_or_mentoring": {
+              "$ref": "#/$defs/string_list"
+            },
+            "oncall_or_reliability_work": {
+              "$ref": "#/$defs/string_list"
+            },
+            "reason_for_leaving": {
+              "$ref": "#/$defs/nullable_string"
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "still_employed": {
+                "const": true
+              }
+            },
+            "required": [
+              "still_employed"
+            ]
+          },
+          "then": {
+            "properties": {
+              "end_date": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "achievement_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "what_changed",
+        "why_it_mattered",
+        "metric_or_proof",
+        "technologies_used",
+        "scope_or_scale"
+      ],
+      "properties": {
+        "what_changed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "why_it_mattered": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "metric_or_proof": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "technologies_used": {
+          "$ref": "#/$defs/string_list"
+        },
+        "scope_or_scale": {
+          "$ref": "#/$defs/nullable_string"
+        }
+      }
+    },
+    "project_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "link",
+        "dates",
+        "type",
+        "short_description",
+        "why_it_matters",
+        "what_you_built",
+        "key_technical_decisions",
+        "technologies",
+        "users_adoption_or_impact",
+        "team_size"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "link": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "dates": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "",
+            "personal",
+            "freelance",
+            "open_source",
+            "academic",
+            "other"
+          ]
+        },
+        "short_description": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "why_it_matters": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "what_you_built": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "key_technical_decisions": {
+          "$ref": "#/$defs/string_list"
+        },
+        "technologies": {
+          "$ref": "#/$defs/string_list"
+        },
+        "users_adoption_or_impact": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "team_size": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    },
+    "education_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "institution",
+        "degree",
+        "field_of_study",
+        "start_date",
+        "end_date",
+        "gpa",
+        "honors",
+        "relevant_coursework",
+        "thesis_or_capstone"
+      ],
+      "properties": {
+        "institution": {
+          "type": "string",
+          "minLength": 1
+        },
+        "degree": {
+          "type": "string",
+          "minLength": 1
+        },
+        "field_of_study": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "start_date": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "end_date": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "gpa": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "honors": {
+          "$ref": "#/$defs/string_list"
+        },
+        "relevant_coursework": {
+          "$ref": "#/$defs/string_list"
+        },
+        "thesis_or_capstone": {
+          "$ref": "#/$defs/nullable_string"
+        }
+      }
+    },
+    "certification_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "issuer",
+        "date_earned",
+        "expiration_date",
+        "credential_link",
+        "credential_id",
+        "relevance"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issuer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date_earned": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "expiration_date": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "credential_link": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "credential_id": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "relevance": {
+          "$ref": "#/$defs/nullable_string"
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "languages",
+        "frameworks_and_libraries",
+        "cloud_and_infrastructure",
+        "data_and_storage",
+        "tooling",
+        "domains"
+      ],
+      "properties": {
+        "languages": {
+          "$ref": "#/$defs/string_list"
+        },
+        "frameworks_and_libraries": {
+          "$ref": "#/$defs/string_list"
+        },
+        "cloud_and_infrastructure": {
+          "$ref": "#/$defs/string_list"
+        },
+        "data_and_storage": {
+          "$ref": "#/$defs/string_list"
+        },
+        "tooling": {
+          "$ref": "#/$defs/string_list"
+        },
+        "domains": {
+          "$ref": "#/$defs/string_list"
+        }
+      }
+    },
+    "public_work": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "writing",
+        "speaking",
+        "open_source"
+      ],
+      "properties": {
+        "writing": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/writing_item"
+          }
+        },
+        "speaking": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/speaking_item"
+          }
+        },
+        "open_source": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/open_source_item"
+          }
+        }
+      }
+    },
+    "writing_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "link",
+        "topic",
+        "why_it_matters"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "link": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "topic": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "why_it_matters": {
+          "$ref": "#/$defs/nullable_string"
+        }
+      }
+    },
+    "speaking_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "event",
+        "date",
+        "topic",
+        "link"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "event": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "date": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "topic": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "link": {
+          "$ref": "#/$defs/nullable_string"
+        }
+      }
+    },
+    "open_source_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project",
+        "link",
+        "contribution",
+        "evidence_of_impact"
+      ],
+      "properties": {
+        "project": {
+          "type": "string",
+          "minLength": 1
+        },
+        "link": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "contribution": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "evidence_of_impact": {
+          "$ref": "#/$defs/nullable_string"
+        }
+      }
+    },
+    "award_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "award",
+        "issuer",
+        "date",
+        "why_it_matters"
+      ],
+      "properties": {
+        "award": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issuer": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "date": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "why_it_matters": {
+          "$ref": "#/$defs/nullable_string"
+        }
+      }
+    },
+    "generation_preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_length",
+        "include_summary",
+        "include_projects",
+        "include_interests",
+        "tone_preferences",
+        "formatting_constraints",
+        "forbidden_content"
+      ],
+      "properties": {
+        "max_length": {
+          "type": "string",
+          "enum": [
+            "one_page",
+            "two_pages",
+            "minimal"
+          ]
+        },
+        "include_summary": {
+          "type": "boolean"
+        },
+        "include_projects": {
+          "type": "string",
+          "enum": [
+            "always",
+            "never",
+            "only_when_helpful"
+          ]
+        },
+        "include_interests": {
+          "type": "string",
+          "enum": [
+            "always",
+            "never",
+            "only_when_relevant"
+          ]
+        },
+        "tone_preferences": {
+          "$ref": "#/$defs/string_list"
+        },
+        "formatting_constraints": {
+          "$ref": "#/$defs/string_list"
+        },
+        "forbidden_content": {
+          "$ref": "#/$defs/string_list"
+        }
+      }
+    },
+    "job_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "company",
+        "role_title",
+        "job_posting_link",
+        "repeated_keywords",
+        "must_have_requirements",
+        "nice_to_have_requirements",
+        "core_hiring_problem",
+        "fit_notes"
+      ],
+      "properties": {
+        "company": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "role_title": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "job_posting_link": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "repeated_keywords": {
+          "$ref": "#/$defs/string_list"
+        },
+        "must_have_requirements": {
+          "$ref": "#/$defs/string_list"
+        },
+        "nice_to_have_requirements": {
+          "$ref": "#/$defs/string_list"
+        },
+        "core_hiring_problem": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "fit_notes": {
+          "$ref": "#/$defs/string_list"
+        }
+      }
+    }
+  }
+}
