@@ -84,3 +84,21 @@ For experience items, keep it simple as well:
 - dates
 - url
 - list of descriptions (which will summarize the relevant work done in that company)
+
+## 19
+
+Can you put the below text in my summary in my personal yaml file?
+
+As a former Amazonian devoted to helping customers and solving problems, Selçuk brings a strong sense of
+ownership and a track record of delivering results.
+
+With over fifteen years of experience developing enterprise grade applications, he has a proven ability to take
+on technical & management duties from operations to development, team building and architecture.
+
+He successfully managed the development of mission-critical workflows and optimized engineering processes
+to enhance eﬃciency and deliver value. His ability to balance technical depth with strategic vision enables him
+to inspire teams and deliver innovative solutions that align with organizational goals.
+
+## 20
+
+Let's remove my personal data from gitignore if it's there and version control it, I want it in the repo

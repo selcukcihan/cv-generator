@@ -1,0 +1,137 @@
+schema_version: 1
+
+basics:
+  full_name: "Selçuk Cihan"
+  current_title: "Senior Software Engineer"
+  email: "selcukcihan@gmail.com"
+  url: "https://selcukcihan.com"
+
+summary: "As a former Amazonian devoted to helping customers and solving problems, Selçuk brings a strong sense of ownership and a track record of delivering results.\n\nWith over fifteen years of experience developing enterprise grade applications, he has a proven ability to take on technical & management duties from operations to development, team building and architecture.\n\nHe successfully managed the development of mission-critical workflows and optimized engineering processes to enhance efficiency and deliver value. His ability to balance technical depth with strategic vision enables him to inspire teams and deliver innovative solutions that align with organizational goals."
+
+experience:
+  - title: "Senior Software Engineer"
+    company: "RTIC"
+    dates: "2023 - Present"
+    url: ""
+    descriptions:
+      - "Backend development for various web applications."
+
+  - title: "Software Engineer"
+    company: "Serverless"
+    dates: "2023"
+    url: ""
+    descriptions:
+      - "Created a Python AWS Lambda SDK for the console product."
+
+  - title: "Senior Software Engineer"
+    company: "Scriber"
+    dates: "2021 - 2022"
+    url: "https://scriber.to"
+    descriptions:
+      - "Created the serverless GraphQL backend for a platform for financial writers."
+      - "Implemented payments with Stripe Connect."
+      - "Built an analytics application to provide financial writers with KPIs."
+
+  - title: "Freelancing Software Development Engineer"
+    company: "Toptal"
+    dates: "2018 - 2019"
+    url: ""
+    descriptions:
+      - "Built web applications on AWS using serverless architecture."
+      - "Created the API and Step Functions orchestrator for the Parsel.ai machine learning pipeline."
+      - "Implemented serverless workflows for ingesting third-party financial articles for tellimer.com."
+      - "Architected an article recommender and summarizer for tellimer.com."
+      - "Created GraphQL APIs with AppSync connected to DynamoDB and RDS."
+      - "Built a fully serverless public-facing web application serving 100K users."
+
+  - title: "Software Development Engineer"
+    company: "Amazon UK"
+    dates: "2017 - 2018"
+    url: ""
+    descriptions:
+      - "Developed and maintained Amazon's catalog orchestration platform."
+      - "Worked on a system handling tens of thousands of TPS using Kinesis."
+      - "Rearchitected an RDS-backed service onto DynamoDB and migrated around 600 GB with no downtime."
+
+  - title: "Senior Software Engineer"
+    company: "Intertech"
+    dates: "2013 - 2017"
+    url: "https://intertech.com.tr"
+    descriptions:
+      - "Worked on a business process management suite serving 500K processes daily."
+      - "Designed and developed a workforce management system for the DenizBank operation center."
+      - "Delivered a project that received an innovation award."
+
+  - title: "Senior Software Engineer"
+    company: "Ziraat Teknoloji"
+    dates: "2011 - 2013"
+    url: "https://ziraatteknoloji.com"
+    descriptions:
+      - "Designed and developed a workflow engine, workflow designer, and administration tools."
+      - "Supported a .NET and Oracle-backed system handling 100K workflow instances daily."
+
+  - title: "Embedded Software Engineer"
+    company: "AirTies Wireless Networks"
+    dates: "2009 - 2010"
+    url: "https://airties.com"
+    descriptions:
+      - "Developed IPTV features in C."
+      - "Worked on teletext, closed captioning, subtitles, and transport protocols."
+
+education:
+  - institution: "Boğaziçi University"
+    degree: "BS. & MS. in Computer Science"
+    field_of_study: "Computer Science"
+
+certifications:
+  - name: "AWS Certified Solutions Architect - Professional"
+    issuer: "Amazon Web Services"
+    expiration_date: "2025-06"
+    relevance: "Relevant for cloud architecture, AWS, and serverless platform roles."
+
+skills:
+  - "TypeScript"
+  - "JavaScript"
+  - "Python"
+  - "Perl"
+  - "Java"
+  - "Scala"
+  - "SQL"
+  - "GraphQL"
+  - "AWS AppSync"
+  - "Serverless"
+  - "AWS"
+  - "AWS Lambda"
+  - "AWS Step Functions"
+  - "Distributed Systems"
+  - "DataDog"
+  - "DynamoDB"
+  - "RDS"
+  - "NoSQL"
+  - "Kinesis"
+
+references:
+  - name: "Daniel Vliegenthart"
+    title: "Tech Lead at Parsel.ai"
+    contact: ""
+    summary: "Recommendation letter available."
+  - name: "Decebal Dobrica"
+    title: "Software Architect at Tellimer"
+    contact: ""
+    summary: "Recommendation letter available."
+  - name: "Ian Watt"
+    title: "Co-founder, Tellimer"
+    contact: ""
+    summary: "Recommendation letter available."
+  - name: "Erdem Kurul"
+    title: "Software Development Manager"
+    contact: "erdemkurul@gmail.com"
+    summary: "Direct manager at Intertech and Ziraat Teknoloji."
+
+generation_preferences:
+  max_length: "one_page"
+  include_projects: "only_when_helpful"
+  tone_preferences:
+    - "direct"
+    - "specific"
+    - "impact-oriented"
