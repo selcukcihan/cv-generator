@@ -47,3 +47,16 @@ What is OPENAI_BASE_URL?
 ## 12
 
 Can you create a PROMPTS.md file and put all the prompts I've given to you in this thread up to now?
+
+## 13
+
+Create an AGENTS.md file suitable for this repository. Please ensure it promotes engineering best practices and also maintains the [PROMPTS.md](PROMPTS.md) with each prompt. I also want it to maintain git and autonomously commit after each iteration.
+
+## 14
+
+Let's cut some clutter, I'll list the fields that we must drop from our schema as well as from the rendering ofcourse. These are the data we drop:
+
+github url, linkedin url (we only want a single url, that can be any url, so name it genericly)
+Skills will be generic as well not categorized, and we should not present them under categories, so a flat list is fine
+summary section must not be generated, we should ask this from the user.
+References are important, we must add it to schema and rendering if it's missing.

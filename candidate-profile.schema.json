@@ -9,7 +9,7 @@
     "schema_version",
     "basics",
     "targeting",
-    "summary_inputs",
+    "summary",
     "interests",
     "experience",
     "projects",
@@ -18,6 +18,7 @@
     "skills",
     "public_work",
     "awards",
+    "references",
     "generation_preferences",
     "job_target"
   ],
@@ -32,8 +33,8 @@
     "targeting": {
       "$ref": "#/$defs/targeting"
     },
-    "summary_inputs": {
-      "$ref": "#/$defs/summary_inputs"
+    "summary": {
+      "$ref": "#/$defs/nullable_string"
     },
     "interests": {
       "$ref": "#/$defs/interests"
@@ -74,6 +75,12 @@
         "$ref": "#/$defs/award_item"
       }
     },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference_item"
+      }
+    },
     "generation_preferences": {
       "$ref": "#/$defs/generation_preferences"
     },
@@ -104,9 +111,7 @@
         "location",
         "email",
         "phone",
-        "linkedin",
-        "github",
-        "personal_website",
+        "url",
         "work_authorization_note"
       ],
       "properties": {
@@ -129,13 +134,7 @@
         "phone": {
           "$ref": "#/$defs/nullable_string"
         },
-        "linkedin": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "github": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "personal_website": {
+        "url": {
           "$ref": "#/$defs/nullable_string"
         },
         "work_authorization_note": {
@@ -197,46 +196,6 @@
               "$ref": "#/$defs/string_list"
             }
           }
-        }
-      }
-    },
-    "summary_inputs": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "years_of_experience",
-        "core_specialty",
-        "secondary_specialties",
-        "primary_domains",
-        "best_known_strengths",
-        "leadership_scope",
-        "differentiators"
-      ],
-      "properties": {
-        "years_of_experience": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "minimum": 0
-        },
-        "core_specialty": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "secondary_specialties": {
-          "$ref": "#/$defs/string_list"
-        },
-        "primary_domains": {
-          "$ref": "#/$defs/string_list"
-        },
-        "best_known_strengths": {
-          "$ref": "#/$defs/string_list"
-        },
-        "leadership_scope": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "differentiators": {
-          "$ref": "#/$defs/string_list"
         }
       }
     },
@@ -595,36 +554,7 @@
       }
     },
     "skills": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "languages",
-        "frameworks_and_libraries",
-        "cloud_and_infrastructure",
-        "data_and_storage",
-        "tooling",
-        "domains"
-      ],
-      "properties": {
-        "languages": {
-          "$ref": "#/$defs/string_list"
-        },
-        "frameworks_and_libraries": {
-          "$ref": "#/$defs/string_list"
-        },
-        "cloud_and_infrastructure": {
-          "$ref": "#/$defs/string_list"
-        },
-        "data_and_storage": {
-          "$ref": "#/$defs/string_list"
-        },
-        "tooling": {
-          "$ref": "#/$defs/string_list"
-        },
-        "domains": {
-          "$ref": "#/$defs/string_list"
-        }
-      }
+      "$ref": "#/$defs/string_list"
     },
     "public_work": {
       "type": "object",
@@ -759,12 +689,36 @@
         }
       }
     },
+    "reference_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "contact",
+        "about",
+        "relation"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contact": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "about": {
+          "$ref": "#/$defs/nullable_string"
+        },
+        "relation": {
+          "$ref": "#/$defs/nullable_string"
+        }
+      }
+    },
     "generation_preferences": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "max_length",
-        "include_summary",
         "include_projects",
         "include_interests",
         "tone_preferences",
@@ -779,9 +733,6 @@
             "two_pages",
             "minimal"
           ]
-        },
-        "include_summary": {
-          "type": "boolean"
         },
         "include_projects": {
           "type": "string",

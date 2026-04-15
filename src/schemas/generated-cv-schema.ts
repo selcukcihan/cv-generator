@@ -5,7 +5,6 @@ export const generatedCvSchema = {
     "fullName",
     "headline",
     "contact",
-    "summary",
     "experience",
     "projects",
     "education",
@@ -16,18 +15,15 @@ export const generatedCvSchema = {
   properties: {
     fullName: { type: "string", minLength: 1 },
     headline: { type: "string" },
-    summary: { type: "string", minLength: 1 },
     contact: {
       type: "object",
       additionalProperties: false,
-      required: ["location", "email", "phone", "linkedin", "github", "website"],
+      required: ["location", "email", "phone", "url"],
       properties: {
         location: { type: "string" },
         email: { type: "string" },
         phone: { type: "string" },
-        linkedin: { type: "string" },
-        github: { type: "string" },
-        website: { type: "string" }
+        url: { type: "string" }
       }
     },
     experience: {
@@ -100,18 +96,7 @@ export const generatedCvSchema = {
     },
     skills: {
       type: "array",
-      items: {
-        type: "object",
-        additionalProperties: false,
-        required: ["category", "items"],
-        properties: {
-          category: { type: "string", minLength: 1 },
-          items: {
-            type: "array",
-            items: { type: "string", minLength: 1 }
-          }
-        }
-      }
+      items: { type: "string", minLength: 1 }
     },
     extras: {
       type: "array",

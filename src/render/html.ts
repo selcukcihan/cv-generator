@@ -1,4 +1,4 @@
-import { GeneratedCv, PageSize, ThemeName } from "../lib/types";
+import { PageSize, RenderableCv, ThemeName } from "../lib/types";
 
 function escapeHtml(value: string): string {
   return value
@@ -13,15 +13,8 @@ function nonEmpty(value: string): boolean {
   return value.trim().length > 0;
 }
 
-function renderContactRow(cv: GeneratedCv): string {
-  const items = [
-    cv.contact.location,
-    cv.contact.email,
-    cv.contact.phone,
-    cv.contact.linkedin,
-    cv.contact.github,
-    cv.contact.website
-  ]
+function renderContactRow(cv: RenderableCv): string {
+  const items = [cv.contact.location, cv.contact.email, cv.contact.phone, cv.contact.url]
     .filter(nonEmpty)
     .map((item) => `<span>${escapeHtml(item)}</span>`);
 
@@ -45,7 +38,7 @@ function renderSection(title: string, body: string): string {
   return `<section><h2>${escapeHtml(title)}</h2>${body}</section>`;
 }
 
-function renderExperience(cv: GeneratedCv): string {
+function renderExperience(cv: RenderableCv): string {
   return cv.experience
     .map((entry) => {
       const meta = [entry.location, entry.dates].filter(nonEmpty).join(" | ");
@@ -65,7 +58,7 @@ function renderExperience(cv: GeneratedCv): string {
     .join("");
 }
 
-function renderProjects(cv: GeneratedCv): string {
+function renderProjects(cv: RenderableCv): string {
   return cv.projects
     .map((entry) => {
       return `
@@ -83,7 +76,7 @@ function renderProjects(cv: GeneratedCv): string {
     .join("");
 }
 
-function renderEducation(cv: GeneratedCv): string {
+function renderEducation(cv: RenderableCv): string {
   return cv.education
     .map((entry) => {
       return `
@@ -102,7 +95,7 @@ function renderEducation(cv: GeneratedCv): string {
     .join("");
 }
 
-function renderCertifications(cv: GeneratedCv): string {
+function renderCertifications(cv: RenderableCv): string {
   return cv.certifications
     .map((entry) => {
       const meta = [entry.issuer, entry.date].filter(nonEmpty).join(" | ");
@@ -121,20 +114,37 @@ function renderCertifications(cv: GeneratedCv): string {
     .join("");
 }
 
-function renderSkills(cv: GeneratedCv): string {
-  return cv.skills
-    .filter((group) => group.items.length > 0)
-    .map(
-      (group) => `
-        <div class="skill-group">
-          <strong>${escapeHtml(group.category)}:</strong> ${escapeHtml(group.items.join(", "))}
-        </div>
-      `
-    )
+function renderSkills(cv: RenderableCv): string {
+  const items = cv.skills.filter(nonEmpty);
+  if (items.length === 0) {
+    return "";
+  }
+
+  return `<p class="flat-list">${escapeHtml(items.join(", "))}</p>`;
+}
+
+function renderReferences(cv: RenderableCv): string {
+  return cv.references
+    .map((reference) => {
+      const meta = [reference.about, reference.contact].filter(nonEmpty).join(" | ");
+      const detailItems = [reference.relation].filter(nonEmpty);
+
+      return `
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>${escapeHtml(reference.name)}</h3>
+              ${nonEmpty(meta) ? `<div class="entry-subtitle">${escapeHtml(meta)}</div>` : ""}
+            </div>
+          </div>
+          ${renderBullets(detailItems)}
+        </article>
+      `;
+    })
     .join("");
 }
 
-function renderExtras(cv: GeneratedCv): string {
+function renderExtras(cv: RenderableCv): string {
   return cv.extras
     .filter((section) => section.items.length > 0)
     .map((section) => renderSection(section.title, renderBullets(section.items)))
@@ -165,7 +175,7 @@ function themeStyles(theme: ThemeName): string {
   }
 }
 
-export function renderHtml(cv: GeneratedCv, theme: ThemeName, pageSize: PageSize): string {
+export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSize): string {
   const pageWidth = pageSize === "Letter" ? "8.5in" : "210mm";
   const pageHeight = pageSize === "Letter" ? "11in" : "297mm";
 
@@ -228,8 +238,7 @@ export function renderHtml(cv: GeneratedCv, theme: ThemeName, pageSize: PageSize
           p { margin: 0; }
           ul { margin: 8px 0 0 18px; padding: 0; }
           li { margin: 4px 0; }
-          .summary { font-size: 13px; }
-          .skill-group { margin-top: 6px; font-size: 12px; }
+          .summary, .flat-list { font-size: 13px; }
         </style>
       </head>
       <body>
@@ -239,12 +248,13 @@ export function renderHtml(cv: GeneratedCv, theme: ThemeName, pageSize: PageSize
             ${nonEmpty(cv.headline) ? `<div class="headline">${escapeHtml(cv.headline)}</div>` : ""}
             ${renderContactRow(cv)}
           </header>
-          ${renderSection("Summary", `<p class="summary">${escapeHtml(cv.summary)}</p>`)}
+          ${nonEmpty(cv.summary) ? renderSection("Summary", `<p class="summary">${escapeHtml(cv.summary)}</p>`) : ""}
           ${renderSection("Experience", renderExperience(cv))}
           ${renderSection("Projects", renderProjects(cv))}
           ${renderSection("Education", renderEducation(cv))}
           ${renderSection("Certifications", renderCertifications(cv))}
           ${renderSection("Skills", renderSkills(cv))}
+          ${renderSection("References", renderReferences(cv))}
           ${renderExtras(cv)}
         </main>
       </body>

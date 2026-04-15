@@ -105,23 +105,19 @@ Avoid:
 
 ### Required: Summary
 
-Always generate a summary unless the application explicitly disables summaries.
+Do not generate the summary.
 
-Summary requirements:
+If a summary section is rendered, it must come directly from user-provided input.
 
-- 2 to 3 sentences maximum
-- tailored to the target role
-- specific about domain, level, and strengths
-- immediately useful to a recruiter
+The generator may place the user-provided summary in the output, but it must not invent, rewrite, or expand it.
 
-The summary should communicate:
+If the user provides a summary, prefer:
 
-- what kind of engineer the candidate is
-- what problems, products, or domains they have worked on
-- what they are strongest at
-- why they fit this role
+- short, specific wording
+- direct relevance to the target role
+- no generic AI-style phrasing
 
-Do not write a generic AI-style summary.
+If no summary is provided, omit the summary section.
 
 ### Required: Experience Bullets
 
@@ -172,9 +168,20 @@ Skills must be:
 - truthful
 - relevant
 - compact
+- presented as a single flat list
 - ordered by relevance to the target role
 
 Do not include every technology ever touched.
+
+### Required: References
+
+If references are provided in the candidate input, include a references section.
+
+References must:
+
+- come directly from user-provided data
+- preserve factual contact and relationship details
+- not be invented, expanded, or paraphrased into stronger claims
 
 ### Required: Tailoring
 
@@ -212,15 +219,13 @@ Include:
 
 - name
 - email
-- LinkedIn URL when available
+- one generic URL when available
 
 Include only if clearly helpful:
 
-- GitHub URL
-- personal website
 - phone number
 
-Exclude low-quality links that weaken the application.
+Exclude low-quality or redundant links that weaken the application.
 
 ### Preferred: Quantification
 
@@ -346,9 +351,7 @@ Select section order based on candidate type:
 
 ### Step 4: Draft Summary
 
-Write a short summary using the highest-ranked evidence.
-
-The summary must not repeat obvious facts from the first experience bullet unless doing so improves clarity.
+Use the user-provided summary as-is when present. Do not generate or rewrite a summary.
 
 ### Step 5: Build Experience
 
@@ -363,9 +366,11 @@ For each role:
 
 Add:
 
+- summary only if user-provided
 - education if relevant or expected
 - projects if they improve fit
-- skills as compact keyword coverage
+- skills as a flat relevant list
+- references if provided
 
 ### Step 7: Compress
 
@@ -391,6 +396,7 @@ A valid CV should pass all checks below.
 
 - The CV is factually consistent with the input.
 - The target role is clearly reflected in the summary or top experience bullets.
+- If a summary is present, it matches user-provided text rather than generated text.
 - The top of the CV contains the strongest evidence.
 - The CV uses standard section names.
 - The bullets describe outcomes, not just responsibilities.
@@ -402,7 +408,7 @@ A valid CV should pass all checks below.
 ### Strong Output Checks
 
 - A recruiter could understand candidate fit in under 10 seconds.
-- The summary sounds specific to this candidate.
+- If a summary is present, it sounds specific to this candidate.
 - The first bullet under each recent role is one of the strongest bullets.
 - Metrics appear where credible.
 - Technologies appear in context, not as random keyword stuffing.

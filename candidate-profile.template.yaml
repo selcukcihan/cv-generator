@@ -13,9 +13,7 @@ basics:
   location: ""
   email: ""
   phone: ""
-  linkedin: ""
-  github: ""
-  personal_website: ""
+  url: ""
   work_authorization_note: ""
 
 targeting:
@@ -31,14 +29,7 @@ targeting:
     highlight_strengths: []
     preferred_keywords: []
 
-summary_inputs:
-  years_of_experience: null
-  core_specialty: ""
-  secondary_specialties: []
-  primary_domains: []
-  best_known_strengths: []
-  leadership_scope: ""
-  differentiators: []
+summary: ""
 
 interests:
   technical: []
@@ -53,13 +44,7 @@ education: []
 
 certifications: []
 
-skills:
-  languages: []
-  frameworks_and_libraries: []
-  cloud_and_infrastructure: []
-  data_and_storage: []
-  tooling: []
-  domains: []
+skills: []
 
 public_work:
   writing: []
@@ -68,9 +53,10 @@ public_work:
 
 awards: []
 
+references: []
+
 generation_preferences:
   max_length: "one_page"
-  include_summary: true
   include_projects: "only_when_helpful"
   include_interests: "only_when_relevant"
   tone_preferences: []

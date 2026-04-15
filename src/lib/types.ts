@@ -2,9 +2,7 @@ export type ContactInfo = {
   location: string;
   email: string;
   phone: string;
-  linkedin: string;
-  github: string;
-  website: string;
+  url: string;
 };
 
 export type CvExperienceEntry = {
@@ -35,9 +33,11 @@ export type CvCertificationEntry = {
   details: string[];
 };
 
-export type CvSkillGroup = {
-  category: string;
-  items: string[];
+export type CvReferenceEntry = {
+  name: string;
+  contact: string;
+  about: string;
+  relation: string;
 };
 
 export type CvExtraSection = {
@@ -49,13 +49,17 @@ export type GeneratedCv = {
   fullName: string;
   headline: string;
   contact: ContactInfo;
-  summary: string;
   experience: CvExperienceEntry[];
   projects: CvProjectEntry[];
   education: CvEducationEntry[];
   certifications: CvCertificationEntry[];
-  skills: CvSkillGroup[];
+  skills: string[];
   extras: CvExtraSection[];
+};
+
+export type RenderableCv = GeneratedCv & {
+  summary: string;
+  references: CvReferenceEntry[];
 };
 
 export type ProviderName = "openai";

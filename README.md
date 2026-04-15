@@ -10,6 +10,13 @@ The generator uses:
 - a pluggable LLM provider layer
 - HTML rendering plus PDF export
 
+Profile behavior:
+
+- summary is user-provided, not LLM-generated
+- contact data uses one generic URL field
+- skills are stored and rendered as one flat list
+- references are stored in the profile and rendered directly
+
 ## Current Provider Support
 
 - OpenAI API
@@ -88,6 +95,7 @@ These are the right things to vary per run:
 - `candidate-profile.template.yaml`: source-of-truth candidate data
 - `candidate-profile.schema.json`: schema for candidate profile validation
 - `PRINCIPLES.md`: LLM-facing generation rules
+- `PROMPTS.md`: running prompt and requirement history
 - `scripts/generate-cv.ts`: generator CLI entrypoint
 - `scripts/validate-candidate-profile.ts`: profile validator CLI
 - `src/providers/openai-provider.ts`: first provider implementation

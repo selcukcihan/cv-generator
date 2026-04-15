@@ -3,6 +3,7 @@ import { writeTextFile, readTextFile, resolveFromCwd } from "../src/lib/fs";
 import { validateGeneratedCv } from "../src/lib/generated-cv";
 import { createProvider } from "../src/lib/providers";
 import { loadProfileYaml, validateProfile } from "../src/lib/profile";
+import { createRenderableCv } from "../src/lib/renderable-cv";
 import { renderHtml } from "../src/render/html";
 import { renderPdf } from "../src/render/pdf";
 
@@ -34,7 +35,8 @@ async function main(): Promise<void> {
   );
 
   const validatedCv = validateGeneratedCv(generated);
-  const html = renderHtml(validatedCv, options.theme, options.pageSize);
+  const renderableCv = createRenderableCv(validatedCv, profile.data);
+  const html = renderHtml(renderableCv, options.theme, options.pageSize);
   const pdfPath = resolveFromCwd(options.outputPdfPath);
 
   await renderPdf(html, pdfPath, options.pageSize);
@@ -44,7 +46,7 @@ async function main(): Promise<void> {
   }
 
   if (options.outputJsonPath) {
-    writeTextFile(resolveFromCwd(options.outputJsonPath), `${JSON.stringify(validatedCv, null, 2)}\n`);
+    writeTextFile(resolveFromCwd(options.outputJsonPath), `${JSON.stringify(renderableCv, null, 2)}\n`);
   }
 
   console.log(`Generated PDF: ${pdfPath}`);
