@@ -1,7 +1,7 @@
 {
   "name": "cv-generator",
   "version": "1.0.0",
-  "description": "Structured CV generator inputs and validation",
+  "description": "Deterministic CV generator from structured YAML to PDF",
   "main": "dist/scripts/generate-cv.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -14,8 +14,6 @@
   "type": "commonjs",
   "dependencies": {
     "ajv": "^8.18.0",
-    "dotenv": "^17.4.2",
-    "openai": "^6.34.0",
     "puppeteer": "^24.41.0",
     "yaml": "^2.8.3"
   },

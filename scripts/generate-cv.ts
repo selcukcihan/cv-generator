@@ -1,7 +1,5 @@
-import { loadCliOptions, loadEnv, printUsage } from "../src/lib/config";
-import { writeTextFile, readTextFile, resolveFromCwd } from "../src/lib/fs";
-import { validateGeneratedCv } from "../src/lib/generated-cv";
-import { createProvider } from "../src/lib/providers";
+import { loadCliOptions, printUsage } from "../src/lib/config";
+import { writeTextFile, resolveFromCwd } from "../src/lib/fs";
 import { loadProfileYaml, validateProfile } from "../src/lib/profile";
 import { createRenderableCv } from "../src/lib/renderable-cv";
 import { renderHtml } from "../src/render/html";
@@ -13,29 +11,12 @@ async function main(): Promise<void> {
     return;
   }
 
-  const env = loadEnv();
-  const options = loadCliOptions(process.argv.slice(2), env);
-
-  const principlesPath = resolveFromCwd("PRINCIPLES.md");
-  const principles = readTextFile(principlesPath);
+  const options = loadCliOptions(process.argv.slice(2));
 
   const profile = loadProfileYaml(options.profilePath);
   validateProfile(profile.data);
 
-  const provider = createProvider(options.provider, env, options.model);
-  const generated = await provider.generateCv(
-    {
-      principles,
-      profileYaml: profile.raw,
-      profileData: profile.data,
-      companyOverride: options.company,
-      roleTitleOverride: options.roleTitle
-    },
-    options
-  );
-
-  const validatedCv = validateGeneratedCv(generated);
-  const renderableCv = createRenderableCv(validatedCv, profile.data);
+  const renderableCv = createRenderableCv(profile.data);
   const html = renderHtml(renderableCv, options.theme, options.pageSize);
   const pdfPath = resolveFromCwd(options.outputPdfPath);
 

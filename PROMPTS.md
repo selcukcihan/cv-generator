@@ -118,3 +118,11 @@ Any links must be rendered without the protocol, the actual link should have the
 ## 24
 
 The summary section in references is not a summary actually, it is what the reference had to tell about the CV owner. So it's like testimonial, we should name it as such and also render it without a bullet point but maybe in a style to make it stand out as a referral/testimonial
+
+## 25
+
+I think we came to a good place now in this repo. But one thing bugs me, it seems we don't need an LLM, what does the LLM add to this generator?
+
+## 26
+
+Let's make it deterministic, remove the llm and all related stuff that we were using while doing the generation. But keep principles.md file

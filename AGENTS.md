@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This repository is a TypeScript-based, LLM-assisted CV generator.
+This repository is a TypeScript-based, deterministic CV generator.
 
 Agents working in this repo must optimize for:
 
@@ -8,7 +8,6 @@ Agents working in this repo must optimize for:
 - reproducibility
 - clear separation of concerns
 - schema-first design
-- safe prompt and model integration
 - maintainable git history
 
 ## Project Intent
@@ -16,18 +15,15 @@ Agents working in this repo must optimize for:
 The generator should let users:
 
 - maintain their own structured candidate data
-- configure LLM access via `.env`
 - generate tailored CVs as PDFs
-- switch LLM providers without rewriting the app
 
 Current design direction:
 
 - candidate source of truth lives in YAML
 - YAML is validated against a JSON Schema
-- generation principles live in `PRINCIPLES.md`
+- generation principles live in `PRINCIPLES.md` as project guidance
 - prompts and requirement history live in `PROMPTS.md`
-- LLM providers are pluggable
-- generation should produce structured JSON before rendering HTML/PDF
+- generation should deterministically map profile data into renderable CV data before rendering HTML/PDF
 
 ## Core Engineering Rules
 
@@ -36,9 +32,7 @@ Agents must:
 - keep the implementation in TypeScript
 - preserve the schema-first workflow
 - validate input before generation
-- validate generated structured output before rendering
-- keep provider-specific logic isolated from generation orchestration
-- avoid hardcoding provider-specific assumptions outside provider modules
+- keep data mapping isolated from rendering
 - prefer small, composable modules over large scripts
 - keep CLI behavior explicit and documented
 - update documentation when behavior changes
@@ -46,9 +40,7 @@ Agents must:
 Agents must not:
 
 - bypass schema validation
-- mix rendering concerns into provider logic
-- make the OpenAI implementation the implicit architecture for all providers
-- introduce hidden configuration
+- mix rendering concerns into profile parsing
 - add dependencies without clear need
 - invent candidate data or silently mutate user-owned profile content
 
@@ -70,9 +62,9 @@ When changing the profile format:
 
 ### Principles
 
-- `PRINCIPLES.md` is an LLM-facing instruction document, not marketing copy.
-- Keep it deterministic, concise, and stable.
-- When changing generation behavior, prefer updating `PRINCIPLES.md` intentionally rather than scattering prompt rules through code.
+- `PRINCIPLES.md` is a repository guidance document for CV-writing rules.
+- Keep it concise, stable, and aligned with the deterministic generator.
+- Do not treat it as an active runtime prompt unless the user explicitly reintroduces LLM generation.
 
 ### Prompt History
 
@@ -82,19 +74,12 @@ When changing the profile format:
 - Do not silently rewrite previous prompts.
 - If the thread meaningfully branches, add a small label or section header rather than deleting history.
 
-### Providers
-
-- Provider implementations belong behind a common interface.
-- Environment variables must remain provider-specific and explicit.
-- OpenAI is the first provider, not the only provider.
-- New providers should plug into the existing orchestration path without changing the overall architecture unnecessarily.
-
 ### Rendering
 
-- Prefer structured content generation first, then rendering.
+- Prefer deterministic structured mapping first, then rendering.
 - HTML should remain readable and deterministic.
 - PDF generation must be reproducible from saved HTML where possible.
-- Debug artifacts like generated JSON or HTML should stay optional per run.
+- Debug artifacts like rendered JSON or HTML should stay optional per run.
 
 ## Validation Rules
 
@@ -113,7 +98,7 @@ npm run build
 npm run validate:profile
 ```
 
-If generation code changes and credentials are available, also run a real generation command. If credentials are unavailable, state that clearly.
+If generation code changes, run a real generation command when feasible.
 
 ## Git Discipline
 
@@ -150,7 +135,7 @@ Interpretation for this repository:
 Recommended commit style:
 
 - `add candidate profile schema validation`
-- `build openai-backed cv generator cli`
+- `build deterministic cv generator cli`
 - `document generator setup and usage`
 
 If a commit is not created because validation failed or the work is incomplete, state that explicitly.

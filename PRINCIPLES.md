@@ -1,8 +1,8 @@
 # CV Generator Instruction Spec
 
-This file is written for LLM consumption.
+This file captures the repository's CV-writing and content principles.
 
-Use it as an instruction layer when generating a software engineering CV.
+Use it as guidance when generating a software engineering CV.
 
 Primary source distilled into this spec: [Software Engineer Resume - Austen McDonald and Neo Kim](https://newsletter.systemdesign.one/p/software-engineer-resume)
 

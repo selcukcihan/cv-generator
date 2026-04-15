@@ -60,8 +60,6 @@ export type RenderableCv = GeneratedCv & {
   references: CvReferenceEntry[];
 };
 
-export type ProviderName = "openai";
-
 export type ThemeName = "classic" | "modern" | "compact";
 
 export type PageSize = "A4" | "Letter";
@@ -71,23 +69,6 @@ export type GenerateCliOptions = {
   outputPdfPath: string;
   outputHtmlPath?: string;
   outputJsonPath?: string;
-  provider: ProviderName;
-  model?: string;
-  company?: string;
-  roleTitle?: string;
   theme: ThemeName;
   pageSize: PageSize;
-  temperature?: number;
 };
-
-export type GenerationContext = {
-  principles: string;
-  profileYaml: string;
-  profileData: unknown;
-  companyOverride?: string;
-  roleTitleOverride?: string;
-};
-
-export interface LlmProvider {
-  generateCv(context: GenerationContext, options: GenerateCliOptions): Promise<GeneratedCv>;
-}
