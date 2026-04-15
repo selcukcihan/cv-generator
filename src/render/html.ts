@@ -194,9 +194,6 @@ function themeStyles(theme: ThemeName): string {
 }
 
 export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSize): string {
-  const pageWidth = pageSize === "Letter" ? "8.5in" : "210mm";
-  const pageHeight = pageSize === "Letter" ? "11in" : "297mm";
-
   return `
     <!doctype html>
     <html lang="en">
@@ -210,15 +207,11 @@ export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSiz
           body {
             margin: 0;
             color: #111827;
-            background: #f3f4f6;
+            background: white;
             line-height: 1.35;
           }
           .page {
-            width: ${pageWidth};
-            min-height: ${pageHeight};
-            margin: 0 auto;
-            padding: 18mm 16mm;
-            background: white;
+            padding: 0;
           }
           header { border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
           h1 { margin: 0; font-size: 28px; color: var(--accent); }
