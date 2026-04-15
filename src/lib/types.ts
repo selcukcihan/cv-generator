@@ -1,7 +1,6 @@
 export type ContactInfo = {
   location: string;
   email: string;
-  phone: string;
   url: string;
 };
 

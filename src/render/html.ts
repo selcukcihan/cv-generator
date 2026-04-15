@@ -14,7 +14,7 @@ function nonEmpty(value: string): boolean {
 }
 
 function renderContactRow(cv: RenderableCv): string {
-  const items = [cv.contact.location, cv.contact.email, cv.contact.phone, cv.contact.url]
+  const items = [cv.contact.location, cv.contact.email, cv.contact.url]
     .filter(nonEmpty)
     .map((item) => `<span>${escapeHtml(item)}</span>`);
 

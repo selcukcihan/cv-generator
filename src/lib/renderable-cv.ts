@@ -4,7 +4,6 @@ type CandidateProfile = {
   basics?: {
     location?: string;
     email?: string;
-    phone?: string;
     url?: string;
   };
   summary?: string;
@@ -33,7 +32,6 @@ export function createRenderableCv(generated: Omit<RenderableCv, "summary" | "re
       ...generated.contact,
       location: candidate.basics?.location ?? generated.contact.location,
       email: candidate.basics?.email ?? generated.contact.email,
-      phone: candidate.basics?.phone ?? generated.contact.phone,
       url: candidate.basics?.url ?? generated.contact.url
     },
     summary: candidate.summary ?? "",

@@ -64,3 +64,7 @@ References are important, we must add it to schema and rendering if it's missing
 ## 15
 
 We must simplify our schema, let's take the user data in candidate-profile.yaml file as an example of our minimalist schema and drop any fields that it does not use.
+
+## 16
+
+We must drop phone as well

@@ -93,7 +93,6 @@
         "current_title",
         "location",
         "email",
-        "phone",
         "url"
       ],
       "properties": {
@@ -108,9 +107,6 @@
           "$ref": "#/$defs/nullable_string"
         },
         "email": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "phone": {
           "$ref": "#/$defs/nullable_string"
         },
         "url": {

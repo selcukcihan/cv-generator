@@ -18,11 +18,10 @@ export const generatedCvSchema = {
     contact: {
       type: "object",
       additionalProperties: false,
-      required: ["location", "email", "phone", "url"],
+      required: ["location", "email", "url"],
       properties: {
         location: { type: "string" },
         email: { type: "string" },
-        phone: { type: "string" },
         url: { type: "string" }
       }
     },

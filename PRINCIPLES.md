@@ -223,7 +223,7 @@ Include:
 
 Include only if clearly helpful:
 
-- phone number
+- location
 
 Exclude low-quality or redundant links that weaken the application.
 
