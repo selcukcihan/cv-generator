@@ -8,13 +8,10 @@
   "required": [
     "schema_version",
     "basics",
-    "targeting",
-    "interests",
     "experience",
     "education",
     "certifications",
     "skills",
-    "awards",
     "references",
     "generation_preferences"
   ],
@@ -26,14 +23,8 @@
     "basics": {
       "$ref": "#/$defs/basics"
     },
-    "targeting": {
-      "$ref": "#/$defs/targeting"
-    },
     "summary": {
       "$ref": "#/$defs/nullable_string"
-    },
-    "interests": {
-      "$ref": "#/$defs/string_list"
     },
     "experience": {
       "type": "array",
@@ -55,12 +46,6 @@
     },
     "skills": {
       "$ref": "#/$defs/string_list"
-    },
-    "awards": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/award_item"
-      }
     },
     "references": {
       "type": "array",
@@ -111,42 +96,6 @@
         },
         "url": {
           "$ref": "#/$defs/nullable_string"
-        }
-      }
-    },
-    "targeting": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "role_titles",
-        "seniority_target",
-        "industries",
-        "company_types",
-        "preferred_work",
-        "highlight_strengths",
-        "preferred_keywords"
-      ],
-      "properties": {
-        "role_titles": {
-          "$ref": "#/$defs/string_list"
-        },
-        "seniority_target": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "industries": {
-          "$ref": "#/$defs/string_list"
-        },
-        "company_types": {
-          "$ref": "#/$defs/string_list"
-        },
-        "preferred_work": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "highlight_strengths": {
-          "$ref": "#/$defs/string_list"
-        },
-        "preferred_keywords": {
-          "$ref": "#/$defs/string_list"
         }
       }
     },
@@ -327,27 +276,6 @@
         }
       }
     },
-    "award_item": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "award",
-        "issuer",
-        "why_it_matters"
-      ],
-      "properties": {
-        "award": {
-          "type": "string",
-          "minLength": 1
-        },
-        "issuer": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "why_it_matters": {
-          "$ref": "#/$defs/nullable_string"
-        }
-      }
-    },
     "reference_item": {
       "type": "object",
       "additionalProperties": false,
@@ -379,7 +307,6 @@
       "required": [
         "max_length",
         "include_projects",
-        "include_interests",
         "tone_preferences"
       ],
       "properties": {
@@ -397,14 +324,6 @@
             "always",
             "never",
             "only_when_helpful"
-          ]
-        },
-        "include_interests": {
-          "type": "string",
-          "enum": [
-            "always",
-            "never",
-            "only_when_relevant"
           ]
         },
         "tone_preferences": {

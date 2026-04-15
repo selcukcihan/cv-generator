@@ -13,18 +13,7 @@ basics:
   email: ""
   url: ""
 
-targeting:
-  role_titles: []
-  seniority_target: ""
-  industries: []
-  company_types: []
-  preferred_work: ""
-  highlight_strengths: []
-  preferred_keywords: []
-
 summary: ""
-
-interests: []
 
 experience: []
 
@@ -34,12 +23,9 @@ certifications: []
 
 skills: []
 
-awards: []
-
 references: []
 
 generation_preferences:
   max_length: "one_page"
   include_projects: "only_when_helpful"
-  include_interests: "only_when_relevant"
   tone_preferences: []

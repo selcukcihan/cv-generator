@@ -68,3 +68,8 @@ We must simplify our schema, let's take the user data in candidate-profile.yaml 
 ## 16
 
 We must drop phone as well
+
+## 17
+
+Let's also drop:
+awards, interests, targeting (whole section)

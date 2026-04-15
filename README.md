@@ -17,6 +17,7 @@ Profile behavior:
 - skills are stored and rendered as one flat list
 - references are stored in the profile and rendered directly
 - the profile schema is intentionally minimal and follows the actual data shape used in `candidate-profile.yaml`
+- the profile no longer includes separate targeting, interests, or awards sections
 
 ## Current Provider Support
 
