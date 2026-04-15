@@ -4,79 +4,80 @@ basics:
   full_name: "Selçuk Cihan"
   current_title: "Senior Software Engineer"
   email: "selcukcihan@gmail.com"
-  url: "https://selcukcihan.com"
+  url: "selcukcihan.com"
 
 summary: "As a former Amazonian devoted to helping customers and solving problems, Selçuk brings a strong sense of ownership and a track record of delivering results.\n\nWith over fifteen years of experience developing enterprise grade applications, he has a proven ability to take on technical & management duties from operations to development, team building and architecture.\n\nHe successfully managed the development of mission-critical workflows and optimized engineering processes to enhance efficiency and deliver value. His ability to balance technical depth with strategic vision enables him to inspire teams and deliver innovative solutions that align with organizational goals."
 
 experience:
   - title: "Senior Software Engineer"
-    company: "RTIC"
+    company: "RTIC Outdoors"
     dates: "2023 - Present"
-    url: ""
+    url: "https://rticoutdoors.com"
     descriptions:
-      - "Backend development for various web applications."
-
-  - title: "Software Engineer"
-    company: "Serverless"
-    dates: "2023"
-    url: ""
-    descriptions:
-      - "Created a Python AWS Lambda SDK for the console product."
+      - "Created mobile device management tools."
+      - "Automated warehouse operations."
+      - "Increased observability of the backend systems."
 
   - title: "Senior Software Engineer"
-    company: "Scriber"
-    dates: "2021 - 2022"
-    url: "https://scriber.to"
+    company: "Serverless Inc."
+    dates: "2022 - 2023"
+    url: "https://serverless.com"
     descriptions:
-      - "Created the serverless GraphQL backend for a platform for financial writers."
-      - "Implemented payments with Stripe Connect."
-      - "Built an analytics application to provide financial writers with KPIs."
+      - "Led the team that created the Python AWS Lambda SDK for Serverless Console, which is an observability platform for applications running on AWS Lambda."
+      - "Implemented CI/CD flows on github actions."
 
-  - title: "Freelancing Software Development Engineer"
+  - title: "Senior Software Engineer"
+    company: "Tellimer"
+    dates: "2019 - 2022"
+    url: "https://tellimer.com"
+    descriptions:
+      - "Created serverless backends for multiple products, including a machine learning SAAS application."
+      - "Mentored team members and led design sessions to determine the correct system architecture."
+      - "Took the initiative to improve operational excellence through active monitoring and improved visibility."
+
+  - title: "Senior Software Engineer"
     company: "Toptal"
     dates: "2018 - 2019"
-    url: ""
+    url: "https://toptal.com"
     descriptions:
-      - "Built web applications on AWS using serverless architecture."
-      - "Created the API and Step Functions orchestrator for the Parsel.ai machine learning pipeline."
-      - "Implemented serverless workflows for ingesting third-party financial articles for tellimer.com."
-      - "Architected an article recommender and summarizer for tellimer.com."
-      - "Created GraphQL APIs with AppSync connected to DynamoDB and RDS."
-      - "Built a fully serverless public-facing web application serving 100K users."
+      - "Developed a REST API, fully serverless on AWS."
+      - "Optimized cost resulting in more than 50% saving on AWS bill."
+      - "Mentored developers and reviewed pull requests."
 
-  - title: "Software Development Engineer"
-    company: "Amazon UK"
+  - title: "Software Engineer"
+    company: "Amazon"
     dates: "2017 - 2018"
-    url: ""
+    url: "https://amazon.com"
     descriptions:
-      - "Developed and maintained Amazon's catalog orchestration platform."
-      - "Worked on a system handling tens of thousands of TPS using Kinesis."
-      - "Rearchitected an RDS-backed service onto DynamoDB and migrated around 600 GB with no downtime."
+      - "Developed and maintained the orchestration platform that processes Amazon’s catalog updates."
+      - "Carried out live migrations of several web services without downtime."
+      - "Successfully deprecated multiple legacy services in an effort to enable catalog growth."
 
   - title: "Senior Software Engineer"
     company: "Intertech"
     dates: "2013 - 2017"
     url: "https://intertech.com.tr"
     descriptions:
-      - "Worked on a business process management suite serving 500K processes daily."
-      - "Designed and developed a workforce management system for the DenizBank operation center."
-      - "Delivered a project that received an innovation award."
+      - "Supported the workflow engine serving banking applications such as loans, customer complaints etc."
+      - "Set up elastic to index workflow engine documents, enabling powerful search for the end user."
+      - "Designed a workforce management system that empowers the bank’s operation center."
 
-  - title: "Senior Software Engineer"
+  - title: "Software Development Engineer"
     company: "Ziraat Teknoloji"
     dates: "2011 - 2013"
     url: "https://ziraatteknoloji.com"
     descriptions:
-      - "Designed and developed a workflow engine, workflow designer, and administration tools."
-      - "Supported a .NET and Oracle-backed system handling 100K workflow instances daily."
+      - "Implemented workflow engine running on top of Oracle, serving over 100,000 workflow instances daily."
+      - "Served as scrum master and mentored junior developers."
 
-  - title: "Embedded Software Engineer"
-    company: "AirTies Wireless Networks"
+  - title: "Software Development Engineer"
+    company: "AirTies"
     dates: "2009 - 2010"
     url: "https://airties.com"
     descriptions:
-      - "Developed IPTV features in C."
-      - "Worked on teletext, closed captioning, subtitles, and transport protocols."
+      - "Developed solutions for IPTV products in C & C++."
+      - "Implemented teletext and RTSP parsers."
+      - "Worked on closed captioning and subtitles for IPTV."
 
 education:
   - institution: "Boğaziçi University"
@@ -87,7 +88,6 @@ certifications:
   - name: "AWS Certified Solutions Architect - Professional"
     issuer: "Amazon Web Services"
     expiration_date: "2025-06"
-    relevance: "Relevant for cloud architecture, AWS, and serverless platform roles."
 
 skills:
   - "TypeScript"

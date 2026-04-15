@@ -154,8 +154,7 @@
       "required": [
         "name",
         "issuer",
-        "expiration_date",
-        "relevance"
+        "expiration_date"
       ],
       "properties": {
         "name": {
@@ -167,9 +166,6 @@
           "minLength": 1
         },
         "expiration_date": {
-          "$ref": "#/$defs/nullable_string"
-        },
-        "relevance": {
           "$ref": "#/$defs/nullable_string"
         }
       }

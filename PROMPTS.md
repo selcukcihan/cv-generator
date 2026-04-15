@@ -102,3 +102,11 @@ to inspire teams and deliver innovative solutions that align with organizational
 ## 20
 
 Let's remove my personal data from gitignore if it's there and version control it, I want it in the repo
+
+## 21
+
+I want you to update my experience using the data from https://github.com/selcukcihan/selcukcihan.github.io/blob/main/public/resume/selcukcihan_cv.pdf please do it exactly, the bullet points in the pdf for each experience must be captured in the personal yaml file
+
+## 22
+
+Let's drop relevance from certifications
