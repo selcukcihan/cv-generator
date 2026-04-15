@@ -126,3 +126,7 @@ I think we came to a good place now in this repo. But one thing bugs me, it seem
 ## 26
 
 Let's make it deterministic, remove the llm and all related stuff that we were using while doing the generation. But keep principles.md file
+
+## 27
+
+Let's ensure we don't break the page in the middle of a section when generating PDF with multiple pages

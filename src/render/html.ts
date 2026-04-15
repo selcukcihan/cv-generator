@@ -227,7 +227,11 @@ export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSiz
             font-size: 12px;
           }
           .sep { color: var(--border); }
-          section { margin-top: 16px; }
+          section {
+            margin-top: 16px;
+            break-inside: avoid-page;
+            page-break-inside: avoid;
+          }
           h2 {
             margin: 0 0 8px;
             padding-bottom: 4px;
@@ -236,15 +240,23 @@ export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSiz
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--accent);
+            break-after: avoid-page;
+            page-break-after: avoid;
           }
           h3 { margin: 0; font-size: 15px; }
-          .entry { margin-top: 10px; }
+          .entry {
+            margin-top: 10px;
+            break-inside: avoid-page;
+            page-break-inside: avoid;
+          }
           .entry:first-child { margin-top: 0; }
           .entry-head {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             gap: 12px;
+            break-after: avoid-page;
+            page-break-after: avoid;
           }
           .entry-subtitle { margin-top: 2px; color: var(--muted); font-size: 12px; }
           .entry-meta { color: var(--muted); font-size: 12px; text-align: right; white-space: nowrap; }
@@ -256,8 +268,14 @@ export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSiz
             padding: 10px 12px;
             border-left: 3px solid var(--accent);
             background: #f8fafc;
+            break-inside: avoid-page;
+            page-break-inside: avoid;
           }
           ul { margin: 8px 0 0 18px; padding: 0; }
+          ul, li {
+            break-inside: avoid-page;
+            page-break-inside: avoid;
+          }
           li { margin: 4px 0; }
           .summary, .flat-list { font-size: 13px; }
           .testimonial { font-size: 12px; color: #334155; }
