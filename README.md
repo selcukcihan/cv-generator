@@ -16,6 +16,7 @@ Profile behavior:
 - contact data uses one generic URL field
 - skills are stored and rendered as one flat list
 - references are stored in the profile and rendered directly
+- the profile schema is intentionally minimal and follows the actual data shape used in `candidate-profile.yaml`
 
 ## Current Provider Support
 

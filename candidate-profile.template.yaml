@@ -8,48 +8,32 @@ schema_version: 1
 
 basics:
   full_name: "TODO"
-  preferred_name: ""
   current_title: ""
   location: ""
   email: ""
   phone: ""
   url: ""
-  work_authorization_note: ""
 
 targeting:
   role_titles: []
   seniority_target: ""
   industries: []
   company_types: []
-  location_preferences: []
-  roles_to_avoid: []
-  tailoring_notes:
-    preferred_work: ""
-    de_emphasize: ""
-    highlight_strengths: []
-    preferred_keywords: []
+  preferred_work: ""
+  highlight_strengths: []
+  preferred_keywords: []
 
 summary: ""
 
-interests:
-  technical: []
-  industry: []
-  relevant_non_technical: []
+interests: []
 
 experience: []
-
-projects: []
 
 education: []
 
 certifications: []
 
 skills: []
-
-public_work:
-  writing: []
-  speaking: []
-  open_source: []
 
 awards: []
 
@@ -60,15 +44,3 @@ generation_preferences:
   include_projects: "only_when_helpful"
   include_interests: "only_when_relevant"
   tone_preferences: []
-  formatting_constraints: []
-  forbidden_content: []
-
-job_target:
-  company: ""
-  role_title: ""
-  job_posting_link: ""
-  repeated_keywords: []
-  must_have_requirements: []
-  nice_to_have_requirements: []
-  core_hiring_problem: ""
-  fit_notes: []

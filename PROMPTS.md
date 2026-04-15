@@ -60,3 +60,7 @@ github url, linkedin url (we only want a single url, that can be any url, so nam
 Skills will be generic as well not categorized, and we should not present them under categories, so a flat list is fine
 summary section must not be generated, we should ask this from the user.
 References are important, we must add it to schema and rendering if it's missing.
+
+## 15
+
+We must simplify our schema, let's take the user data in candidate-profile.yaml file as an example of our minimalist schema and drop any fields that it does not use.
