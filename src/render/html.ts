@@ -48,12 +48,16 @@ function renderBullets(items: string[]): string {
   return `<ul>${filtered.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
 }
 
+function sectionClassName(title: string): string {
+  return `section-${title.toLowerCase().replace(/\s+/g, "-")}`;
+}
+
 function renderSection(title: string, body: string): string {
   if (!body.trim()) {
     return "";
   }
 
-  return `<section><h2>${escapeHtml(title)}</h2>${body}</section>`;
+  return `<section class="${sectionClassName(title)}"><h2>${escapeHtml(title)}</h2>${body}</section>`;
 }
 
 function renderExperience(cv: RenderableCv): string {
@@ -227,8 +231,10 @@ export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSiz
             font-size: 12px;
           }
           .sep { color: var(--border); }
-          section {
-            margin-top: 16px;
+          section { margin-top: 16px; }
+          .section-summary,
+          .section-skills,
+          .section-certifications {
             break-inside: avoid-page;
             page-break-inside: avoid;
           }

@@ -130,3 +130,7 @@ Let's make it deterministic, remove the llm and all related stuff that we were u
 ## 27
 
 Let's ensure we don't break the page in the middle of a section when generating PDF with multiple pages
+
+## 28
+
+I think there's a problem with summary section. After summary we had a page break, why?
