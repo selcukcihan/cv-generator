@@ -13,10 +13,28 @@ function nonEmpty(value: string): boolean {
   return value.trim().length > 0;
 }
 
+function displayUrl(value: string): string {
+  return value.replace(/^https?:\/\//, "");
+}
+
+function renderMaybeLink(value: string): string {
+  if (!nonEmpty(value)) {
+    return "";
+  }
+
+  if (/^https?:\/\//.test(value)) {
+    const href = escapeHtml(value);
+    const label = escapeHtml(displayUrl(value));
+    return `<a href="${href}">${label}</a>`;
+  }
+
+  return escapeHtml(value);
+}
+
 function renderContactRow(cv: RenderableCv): string {
   const items = [cv.contact.email, cv.contact.url]
     .filter(nonEmpty)
-    .map((item) => `<span>${escapeHtml(item)}</span>`);
+    .map((item) => `<span>${renderMaybeLink(item)}</span>`);
 
   return items.length > 0 ? `<div class="contact-row">${items.join("<span class=\"sep\">•</span>")}</div>` : "";
 }
@@ -41,7 +59,7 @@ function renderSection(title: string, body: string): string {
 function renderExperience(cv: RenderableCv): string {
   return cv.experience
     .map((entry) => {
-      const meta = [entry.dates, entry.url].filter(nonEmpty).join(" | ");
+      const metaParts = [entry.dates ? escapeHtml(entry.dates) : "", entry.url ? renderMaybeLink(entry.url) : ""].filter(nonEmpty);
       return `
         <article class="entry">
           <div class="entry-head">
@@ -49,7 +67,7 @@ function renderExperience(cv: RenderableCv): string {
               <h3>${escapeHtml(entry.company)}</h3>
               <div class="entry-subtitle">${escapeHtml(entry.title)}</div>
             </div>
-            <div class="entry-meta">${escapeHtml(meta)}</div>
+            <div class="entry-meta">${metaParts.join(" | ")}</div>
           </div>
           ${renderBullets(entry.descriptions)}
         </article>
@@ -235,6 +253,8 @@ export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSiz
           }
           .entry-subtitle { margin-top: 2px; color: var(--muted); font-size: 12px; }
           .entry-meta { color: var(--muted); font-size: 12px; text-align: right; white-space: nowrap; }
+          a { color: inherit; text-decoration: none; }
+          a:hover { text-decoration: underline; }
           p { margin: 0; }
           ul { margin: 8px 0 0 18px; padding: 0; }
           li { margin: 4px 0; }

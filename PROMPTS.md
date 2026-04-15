@@ -110,3 +110,7 @@ I want you to update my experience using the data from https://github.com/selcuk
 ## 22
 
 Let's drop relevance from certifications
+
+## 23
+
+Any links must be rendered without the protocol, the actual link should have the protocol like https but it should not be rendered, so for example selcukcihan.com instead of https://selcukcihan.com
