@@ -215,9 +215,21 @@ export function renderHtml(cv: RenderableCv, theme: ThemeName, pageSize: PageSiz
             color: #111827;
             background: white;
             line-height: 1.35;
+            padding: 24px;
           }
           .page {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
             padding: 0;
+          }
+          @media print {
+            body {
+              padding: 0;
+            }
+            .page {
+              max-width: none;
+            }
           }
           header { border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
           h1 { margin: 0; font-size: 28px; color: var(--accent); }

@@ -138,3 +138,7 @@ I think there's a problem with summary section. After summary we had a page brea
 ## 29
 
 Can we make the font smaller for the bullet points of experience? It is even bigger than the summary font size
+
+## 30
+
+The html version of the CV has no margins on the sides, I want it to be centered and equal spacing on both sides
