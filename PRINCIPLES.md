@@ -4,7 +4,7 @@ This file captures the repository's CV-writing and content principles.
 
 Use it as guidance when generating a software engineering CV.
 
-Primary source distilled into this spec: [Software Engineer Resume - Austen McDonald and Neo Kim](https://newsletter.systemdesign.one/p/software-engineer-resume)
+Starting point and primary source for these principles: [Software Engineer Resume](https://open.substack.com/pub/systemdesignone/p/software-engineer-resume?utm_campaign=post-expanded-share&utm_medium=post%20viewer)
 
 ## Objective
 

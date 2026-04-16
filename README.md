@@ -2,6 +2,8 @@
 
 Deterministic software engineering CV generator.
 
+This project started from the resume principles discussed in [Software Engineer Resume](https://open.substack.com/pub/systemdesignone/p/software-engineer-resume?utm_campaign=post-expanded-share&utm_medium=post%20viewer), and the repository keeps a distilled version of those ideas in `PRINCIPLES.md`.
+
 The generator uses:
 
 - a structured candidate profile in YAML

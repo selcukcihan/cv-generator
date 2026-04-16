@@ -142,3 +142,7 @@ Can we make the font smaller for the bullet points of experience? It is even big
 ## 30
 
 The html version of the CV has no margins on the sides, I want it to be centered and equal spacing on both sides
+
+## 31
+
+We must mention our starting point and where we derived principles from: https://open.substack.com/pub/systemdesignone/p/software-engineer-resume?utm_campaign=post-expanded-share&utm_medium=post%20viewer
