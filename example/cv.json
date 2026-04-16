@@ -1,0 +1,154 @@
+{
+  "fullName": "Selçuk Cihan",
+  "headline": "Senior Software Engineer",
+  "contact": {
+    "email": "selcukcihan@gmail.com",
+    "url": "selcukcihan.com"
+  },
+  "summary": "As a former Amazonian devoted to helping customers and solving problems, Selçuk brings a strong sense of ownership and a track record of delivering results. With twenty years of experience developing enterprise grade applications, he has a proven ability to take on technical & management duties from operations to development, team building and architecture.",
+  "experience": [
+    {
+      "title": "Senior Software Engineer",
+      "company": "RTIC Outdoors",
+      "dates": "2023 - Present",
+      "url": "https://rticoutdoors.com",
+      "descriptions": [
+        "Created mobile device management tools.",
+        "Automated warehouse operations.",
+        "Increased observability of the backend systems."
+      ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Serverless Inc.",
+      "dates": "2022 - 2023",
+      "url": "https://serverless.com",
+      "descriptions": [
+        "Led the team that created the Python AWS Lambda SDK for Serverless Console, which is an observability platform for applications running on AWS Lambda.",
+        "Implemented CI/CD flows on github actions."
+      ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Tellimer",
+      "dates": "2019 - 2022",
+      "url": "https://tellimer.com",
+      "descriptions": [
+        "Created serverless backends for multiple products, including a machine learning SAAS application.",
+        "Mentored team members and led design sessions to determine the correct system architecture.",
+        "Took the initiative to improve operational excellence through active monitoring and improved visibility."
+      ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Toptal",
+      "dates": "2018 - 2019",
+      "url": "https://toptal.com",
+      "descriptions": [
+        "Developed a REST API, fully serverless on AWS.",
+        "Optimized cost resulting in more than 50% saving on AWS bill.",
+        "Mentored developers and reviewed pull requests."
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Amazon",
+      "dates": "2017 - 2018",
+      "url": "https://amazon.com",
+      "descriptions": [
+        "Developed and maintained the orchestration platform that processes Amazon’s catalog updates.",
+        "Carried out live migrations of several web services without downtime.",
+        "Successfully deprecated multiple legacy services in an effort to enable catalog growth."
+      ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Intertech",
+      "dates": "2013 - 2017",
+      "url": "https://intertech.com.tr",
+      "descriptions": [
+        "Supported the workflow engine serving banking applications such as loans, customer complaints etc.",
+        "Set up elastic to index workflow engine documents, enabling powerful search for the end user.",
+        "Designed a workforce management system that empowers the bank’s operation center."
+      ]
+    },
+    {
+      "title": "Software Development Engineer",
+      "company": "Ziraat Teknoloji",
+      "dates": "2011 - 2013",
+      "url": "https://ziraatteknoloji.com",
+      "descriptions": [
+        "Implemented workflow engine running on top of Oracle, serving over 100,000 workflow instances daily.",
+        "Served as scrum master and mentored junior developers."
+      ]
+    },
+    {
+      "title": "Software Development Engineer",
+      "company": "AirTies",
+      "dates": "2009 - 2010",
+      "url": "https://airties.com",
+      "descriptions": [
+        "Developed solutions for IPTV products in C & C++.",
+        "Implemented teletext and RTSP parsers.",
+        "Worked on closed captioning and subtitles for IPTV."
+      ]
+    }
+  ],
+  "projects": [],
+  "education": [
+    {
+      "institution": "Boğaziçi University",
+      "degree": "BS. & MS. in Computer Science",
+      "dates": "",
+      "details": [
+        "Computer Science"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect - Professional",
+      "issuer": "Amazon Web Services",
+      "date": "2025-06",
+      "details": []
+    }
+  ],
+  "skills": [
+    "TypeScript/JavaScript",
+    "Python",
+    "Perl",
+    "Java/Scala",
+    "SQL/NoSQL",
+    "GraphQL",
+    "AWS",
+    "Serverless",
+    "Kubernetes",
+    "Distributed Systems",
+    "Google Cloud",
+    "Docker",
+    "NodeJS",
+    "React",
+    "Unix"
+  ],
+  "references": [
+    {
+      "name": "Daniel Vliegenthart",
+      "title": "Team Lead",
+      "contact": "tellimer.com",
+      "testimonial": "I've been most impressed by his exceptional ability to tackle every phase of software development with in-depth knowledge, confidence and clear communication. I cannot emphasize enough how good Selcuk is at communicating in a clear and structured manner."
+    },
+    {
+      "name": "Ian Watt",
+      "title": "Co-founder, Tellimer",
+      "contact": "tellimer.com",
+      "testimonial": "He was the perfect remote contractor in many ways. His communication skills are top, he is very much a self-starter who can get stuck in on work with minimal guidance or oversight, and his code quality (and documentation!) is exceptional."
+    },
+    {
+      "name": "Erdem Kurul",
+      "title": "Software Development Manager",
+      "contact": "erdemkurul@gmail.com",
+      "testimonial": "Selçuk is a quick learner, he approaches problems systematically and understands the business and customer needs. He is very detail-oriented, and a hard worker. You can trust him with the most challenging issues."
+    }
+  ],
+  "extras": []
+}

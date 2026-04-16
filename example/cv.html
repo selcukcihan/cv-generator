@@ -1,0 +1,263 @@
+
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Selçuk Cihan CV</title>
+        <style>
+          
+        :root { --accent: #183153; --muted: #556270; --border: #d6dde6; }
+        body { font-family: Georgia, "Times New Roman", serif; }
+      
+          * { box-sizing: border-box; }
+          body {
+            margin: 0;
+            color: #111827;
+            background: white;
+            line-height: 1.35;
+            padding: 24px;
+          }
+          .page {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0;
+          }
+          @media print {
+            body {
+              padding: 0;
+            }
+            .page {
+              max-width: none;
+            }
+          }
+          header { border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+          h1 { margin: 0; font-size: 28px; color: var(--accent); }
+          .headline { margin-top: 4px; font-size: 15px; font-weight: 600; }
+          .contact-row {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            color: var(--muted);
+            font-size: 12px;
+          }
+          .sep { color: var(--border); }
+          section { margin-top: 16px; }
+          .section-summary,
+          .section-skills,
+          .section-certifications {
+            break-inside: avoid-page;
+            page-break-inside: avoid;
+          }
+          h2 {
+            margin: 0 0 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            break-after: avoid-page;
+            page-break-after: avoid;
+          }
+          h3 { margin: 0; font-size: 15px; }
+          .entry {
+            margin-top: 10px;
+            break-inside: avoid-page;
+            page-break-inside: avoid;
+          }
+          .entry:first-child { margin-top: 0; }
+          .entry-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            break-after: avoid-page;
+            page-break-after: avoid;
+          }
+          .entry-subtitle { margin-top: 2px; color: var(--muted); font-size: 12px; }
+          .entry-meta { color: var(--muted); font-size: 12px; text-align: right; white-space: nowrap; }
+          a { color: inherit; text-decoration: none; }
+          a:hover { text-decoration: underline; }
+          p { margin: 0; }
+          blockquote {
+            margin: 8px 0 0;
+            padding: 10px 12px;
+            border-left: 3px solid var(--accent);
+            background: #f8fafc;
+            break-inside: avoid-page;
+            page-break-inside: avoid;
+          }
+          ul { margin: 8px 0 0 18px; padding: 0; }
+          ul, li {
+            break-inside: avoid-page;
+            page-break-inside: avoid;
+          }
+          li {
+            margin: 4px 0;
+            font-size: 12px;
+          }
+          .summary, .flat-list { font-size: 13px; }
+          .testimonial { font-size: 12px; color: #334155; }
+        </style>
+      </head>
+      <body>
+        <main class="page">
+          <header>
+            <h1>Selçuk Cihan</h1>
+            <div class="headline">Senior Software Engineer</div>
+            <div class="contact-row"><span>selcukcihan@gmail.com</span><span class="sep">•</span><span>selcukcihan.com</span></div>
+          </header>
+          <section class="section-summary"><h2>Summary</h2><p class="summary">As a former Amazonian devoted to helping customers and solving problems, Selçuk brings a strong sense of ownership and a track record of delivering results. With twenty years of experience developing enterprise grade applications, he has a proven ability to take on technical &amp; management duties from operations to development, team building and architecture.</p></section>
+          <section class="section-experience"><h2>Experience</h2>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>RTIC Outdoors</h3>
+              <div class="entry-subtitle">Senior Software Engineer</div>
+            </div>
+            <div class="entry-meta">2023 - Present | <a href="https://rticoutdoors.com">rticoutdoors.com</a></div>
+          </div>
+          <ul><li>Created mobile device management tools.</li><li>Automated warehouse operations.</li><li>Increased observability of the backend systems.</li></ul>
+        </article>
+      
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Serverless Inc.</h3>
+              <div class="entry-subtitle">Senior Software Engineer</div>
+            </div>
+            <div class="entry-meta">2022 - 2023 | <a href="https://serverless.com">serverless.com</a></div>
+          </div>
+          <ul><li>Led the team that created the Python AWS Lambda SDK for Serverless Console, which is an observability platform for applications running on AWS Lambda.</li><li>Implemented CI/CD flows on github actions.</li></ul>
+        </article>
+      
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Tellimer</h3>
+              <div class="entry-subtitle">Senior Software Engineer</div>
+            </div>
+            <div class="entry-meta">2019 - 2022 | <a href="https://tellimer.com">tellimer.com</a></div>
+          </div>
+          <ul><li>Created serverless backends for multiple products, including a machine learning SAAS application.</li><li>Mentored team members and led design sessions to determine the correct system architecture.</li><li>Took the initiative to improve operational excellence through active monitoring and improved visibility.</li></ul>
+        </article>
+      
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Toptal</h3>
+              <div class="entry-subtitle">Senior Software Engineer</div>
+            </div>
+            <div class="entry-meta">2018 - 2019 | <a href="https://toptal.com">toptal.com</a></div>
+          </div>
+          <ul><li>Developed a REST API, fully serverless on AWS.</li><li>Optimized cost resulting in more than 50% saving on AWS bill.</li><li>Mentored developers and reviewed pull requests.</li></ul>
+        </article>
+      
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Amazon</h3>
+              <div class="entry-subtitle">Software Engineer</div>
+            </div>
+            <div class="entry-meta">2017 - 2018 | <a href="https://amazon.com">amazon.com</a></div>
+          </div>
+          <ul><li>Developed and maintained the orchestration platform that processes Amazon’s catalog updates.</li><li>Carried out live migrations of several web services without downtime.</li><li>Successfully deprecated multiple legacy services in an effort to enable catalog growth.</li></ul>
+        </article>
+      
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Intertech</h3>
+              <div class="entry-subtitle">Senior Software Engineer</div>
+            </div>
+            <div class="entry-meta">2013 - 2017 | <a href="https://intertech.com.tr">intertech.com.tr</a></div>
+          </div>
+          <ul><li>Supported the workflow engine serving banking applications such as loans, customer complaints etc.</li><li>Set up elastic to index workflow engine documents, enabling powerful search for the end user.</li><li>Designed a workforce management system that empowers the bank’s operation center.</li></ul>
+        </article>
+      
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Ziraat Teknoloji</h3>
+              <div class="entry-subtitle">Software Development Engineer</div>
+            </div>
+            <div class="entry-meta">2011 - 2013 | <a href="https://ziraatteknoloji.com">ziraatteknoloji.com</a></div>
+          </div>
+          <ul><li>Implemented workflow engine running on top of Oracle, serving over 100,000 workflow instances daily.</li><li>Served as scrum master and mentored junior developers.</li></ul>
+        </article>
+      
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>AirTies</h3>
+              <div class="entry-subtitle">Software Development Engineer</div>
+            </div>
+            <div class="entry-meta">2009 - 2010 | <a href="https://airties.com">airties.com</a></div>
+          </div>
+          <ul><li>Developed solutions for IPTV products in C &amp; C++.</li><li>Implemented teletext and RTSP parsers.</li><li>Worked on closed captioning and subtitles for IPTV.</li></ul>
+        </article>
+      </section>
+          
+          <section class="section-education"><h2>Education</h2>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Boğaziçi University</h3>
+              <div class="entry-subtitle">BS. &amp; MS. in Computer Science</div>
+            </div>
+            <div class="entry-meta"></div>
+          </div>
+          <ul><li>Computer Science</li></ul>
+        </article>
+      </section>
+          <section class="section-certifications"><h2>Certifications</h2>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>AWS Certified Solutions Architect - Professional</h3>
+              <div class="entry-subtitle">Amazon Web Services | 2025-06</div>
+            </div>
+          </div>
+          
+        </article>
+      </section>
+          <section class="section-skills"><h2>Skills</h2><p class="flat-list">TypeScript/JavaScript, Python, Perl, Java/Scala, SQL/NoSQL, GraphQL, AWS, Serverless, Kubernetes, Distributed Systems, Google Cloud, Docker, NodeJS, React, Unix</p></section>
+          <section class="section-references"><h2>References</h2>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Daniel Vliegenthart</h3>
+              <div class="entry-subtitle">Team Lead, Tellimer | daniel.vliegenthart@gmail.com</div>
+            </div>
+          </div>
+          <blockquote class="testimonial">I&#39;ve been most impressed by his exceptional ability to tackle every phase of software development with in-depth knowledge, confidence and clear communication. I cannot emphasize enough how good Selcuk is at communicating in a clear and structured manner.</blockquote>
+        </article>
+      
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Ian Watt</h3>
+              <div class="entry-subtitle">Co-founder, Tellimer | ian.watt@tellimer.com</div>
+            </div>
+          </div>
+          <blockquote class="testimonial">He was the perfect remote contractor in many ways. His communication skills are top, he is very much a self-starter who can get stuck in on work with minimal guidance or oversight, and his code quality (and documentation!) is exceptional.</blockquote>
+        </article>
+      
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Erdem Kurul</h3>
+              <div class="entry-subtitle">Software Development Manager, Intertech | erdemkurul@gmail.com</div>
+            </div>
+          </div>
+          <blockquote class="testimonial">Selçuk is a quick learner, he approaches problems systematically and understands the business and customer needs. He is very detail-oriented, and a hard worker. You can trust him with the most challenging issues.</blockquote>
+        </article>
+      </section>
+          
+        </main>
+      </body>
+    </html>
+  
