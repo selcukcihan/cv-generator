@@ -263,3 +263,7 @@ Ok let's remove automated publishing.
 ## 47
 
 One thing we should also fix, the public facing docs website does not mention how to install the tool. It would be good to extend the docs to include either npm install or run it directly with npx. One more thing, we must show an example yaml in the docs so people get a feeling of what it looks like. I'd also change the "How it works" section to be more specific like with exact commands to run.
+
+## 48
+
+I tried to follow the docs on the website, I installed the npm package. Then I tried "cp candidate-profile.template.yaml candidate-profile.yaml" but since there's no candidate.profile.template.yaml it failed. I think we must have a bootstrap command to initialize a candidate-profile.yaml file

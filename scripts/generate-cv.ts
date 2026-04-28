@@ -1,12 +1,19 @@
 #!/usr/bin/env node
 
+import fs from "node:fs";
+import path from "node:path";
+
 import { loadCliOptions, printUsage } from "../src/lib/config";
-import { writeTextFile, resolveFromCwd } from "../src/lib/fs";
+import { readTextFile, writeTextFile, resolveFromCwd } from "../src/lib/fs";
 import { formatValidationSummary, validateGeneratedPdf } from "../src/lib/pdf-validator";
 import { loadProfileYaml, validateProfile } from "../src/lib/profile";
 import { createRenderableCv } from "../src/lib/renderable-cv";
 import { renderHtml } from "../src/render/html";
 import { renderPdf } from "../src/render/pdf";
+
+function getBundledTemplatePath(): string {
+  return path.resolve(__dirname, "..", "..", "candidate-profile.template.yaml");
+}
 
 async function main(): Promise<void> {
   if (process.argv.includes("--help")) {
@@ -15,6 +22,21 @@ async function main(): Promise<void> {
   }
 
   const options = loadCliOptions(process.argv.slice(2));
+
+  if (options.initMode) {
+    const profilePath = resolveFromCwd(options.profilePath);
+
+    if (fs.existsSync(profilePath) && !options.force) {
+      throw new Error(
+        `Profile already exists: ${profilePath}\nUse --force to overwrite it, or pass --profile <path> to choose another file.`
+      );
+    }
+
+    const template = readTextFile(getBundledTemplatePath());
+    writeTextFile(profilePath, template);
+    console.log(`Created starter profile: ${profilePath}`);
+    return;
+  }
 
   const profile = loadProfileYaml(options.profilePath);
   validateProfile(profile.data);

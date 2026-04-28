@@ -23,10 +23,10 @@ Documentation site: GitHub Pages from [`docs/index.html`](docs/index.html)
 npm install -g @scihan/cv-generator
 ```
 
-2. Copy the example profile:
+2. Create a starter profile:
 
 ```bash
-cp candidate-profile.template.yaml candidate-profile.yaml
+cv-generator --init
 ```
 
 3. Fill in your details in `candidate-profile.yaml`.
@@ -67,6 +67,7 @@ cv-generator --profile candidate-profile.yaml --out output/cv.pdf --score-report
 - The tool checks your profile before creating the PDF.
 - The tool also scores the final PDF for bot readability, structure, content, and layout.
 - Use `--no-score` if you want to skip the quality check.
+- Use `cv-generator --init --force` if you want to recreate the starter file.
 
 ## For Developers
 

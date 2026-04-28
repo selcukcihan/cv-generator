@@ -308,13 +308,13 @@
           <h2>Install and run</h2>
           <ol>
             <li>Install the package with npm, or run it directly with npx.</li>
-            <li>Copy the example YAML file.</li>
+            <li>Create a starter YAML file.</li>
             <li>Fill in your own details.</li>
             <li>Run the generate command.</li>
           </ol>
           <div class="terminal"><code>npm install -g @scihan/cv-generator
 
-cp candidate-profile.template.yaml candidate-profile.yaml
+cv-generator --init
 
 cv-generator --profile candidate-profile.yaml --out output/cv.pdf</code></div>
           <div class="mini-actions">
@@ -325,7 +325,8 @@ cv-generator --profile candidate-profile.yaml --out output/cv.pdf</code></div>
         <article class="card narrow">
           <h2>No install option</h2>
           <p>You can also run it directly with npx:</p>
-          <div class="terminal"><code>npx @scihan/cv-generator --profile candidate-profile.yaml --out output/cv.pdf</code></div>
+          <div class="terminal"><code>npx @scihan/cv-generator --init
+npx @scihan/cv-generator --profile candidate-profile.yaml --out output/cv.pdf</code></div>
         </article>
 
         <article class="card narrow">

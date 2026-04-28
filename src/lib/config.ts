@@ -52,6 +52,8 @@ export function loadCliOptions(argv: string[]): GenerateCliOptions {
   }
 
   return {
+    initMode: args.init === true,
+    force: args.force === true,
     profilePath,
     outputPdfPath,
     outputHtmlPath,
@@ -71,8 +73,11 @@ export function printUsage(): string {
     "",
     "Usage:",
     "  cv-generator --profile candidate-profile.yaml --out output/cv.pdf",
+    "  cv-generator --init",
     "",
     "Options:",
+    "  --init              Create a starter candidate-profile.yaml file",
+    "  --force             Overwrite an existing profile when used with --init",
     "  --profile <path>    Your YAML profile file",
     "  --out <path>        Where the PDF should be written",
     "  --html-out <path>   Also save an HTML copy",
@@ -83,6 +88,7 @@ export function printUsage(): string {
     "  --page-size <name>  A4 or Letter",
     "",
     "Examples:",
+    "  cv-generator --init",
     "  cv-generator --profile candidate-profile.yaml --out output/cv.pdf",
     "  cv-generator --profile candidate-profile.yaml --out output/cv.pdf --html-out output/cv.html"
   ].join("\n");

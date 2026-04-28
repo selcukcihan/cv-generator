@@ -65,6 +65,8 @@ export type ThemeName = "classic" | "modern" | "compact";
 export type PageSize = "A4" | "Letter";
 
 export type GenerateCliOptions = {
+  initMode: boolean;
+  force: boolean;
   profilePath: string;
   outputPdfPath: string;
   outputHtmlPath?: string;
