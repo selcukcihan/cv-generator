@@ -168,3 +168,7 @@ Ok, now let's add a new feature. I want to ensure generated CVs match a certain 
 ## 36
 
 Yes please go ahead
+
+## 37
+
+Can you do a search to see if there's already tools that we can use to score a CV? If so we can do our own scoring and combine it with some other scoring to have a better signal
