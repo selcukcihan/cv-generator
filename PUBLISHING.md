@@ -12,6 +12,7 @@ This file is for repository and release maintenance.
 ```bash
 npm run build
 npm pack --dry-run
+npm run score:pdf -- --pdf output/cv.pdf
 ```
 
 ## First Publish
@@ -34,7 +35,7 @@ Configure npm Trusted Publishing for:
 
 Workflow file:
 
-- [.github/workflows/release.yml](/Users/selcukcihan/code/cv-generator/.github/workflows/release.yml)
+- [.github/workflows/release.yml](.github/workflows/release.yml)
 
 ## Release Flow
 

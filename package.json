@@ -4,13 +4,15 @@
   "description": "Deterministic CV generator from structured YAML to PDF",
   "main": "dist/scripts/generate-cv.js",
   "bin": {
-    "cv-generator": "dist/scripts/generate-cv.js"
+    "cv-generator": "dist/scripts/generate-cv.js",
+    "cv-generator-score": "dist/scripts/score-cv.js"
   },
   "scripts": {
     "build": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\" && tsc -p tsconfig.json",
     "prepack": "npm run build",
     "validate:profile": "npm run build && node dist/scripts/validate-candidate-profile.js candidate-profile.template.yaml",
-    "generate": "npm run build && node dist/scripts/generate-cv.js"
+    "generate": "npm run build && node dist/scripts/generate-cv.js",
+    "score:pdf": "npm run build && node dist/scripts/score-cv.js"
   },
   "files": [
     "assets",
@@ -43,6 +45,7 @@
   },
   "dependencies": {
     "ajv": "^8.18.0",
+    "pdfjs-dist": "^5.7.284",
     "puppeteer": "^24.41.0",
     "yaml": "^2.8.3"
   },

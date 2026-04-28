@@ -4,7 +4,7 @@
 
 Turn a simple YAML file into a clean PDF CV.
 
-This project started from the resume ideas in [Software Engineer Resume](https://open.substack.com/pub/systemdesignone/p/software-engineer-resume?utm_campaign=post-expanded-share&utm_medium=post%20viewer). Those ideas are summarized in [PRINCIPLES.md](/Users/selcukcihan/code/cv-generator/PRINCIPLES.md).
+This project started from the resume ideas in [Software Engineer Resume](https://open.substack.com/pub/systemdesignone/p/software-engineer-resume?utm_campaign=post-expanded-share&utm_medium=post%20viewer). Those ideas are summarized in [PRINCIPLES.md](PRINCIPLES.md).
 
 Package name: `@scihan/cv-generator`
 
@@ -35,6 +35,12 @@ cp candidate-profile.template.yaml candidate-profile.yaml
 cv-generator --profile candidate-profile.yaml --out output/cv.pdf
 ```
 
+5. Score the finished PDF:
+
+```bash
+cv-generator-score --pdf output/cv.pdf
+```
+
 ## Optional Outputs
 
 If you also want an HTML copy:
@@ -43,11 +49,17 @@ If you also want an HTML copy:
 cv-generator --profile candidate-profile.yaml --out output/cv.pdf --html-out output/cv.html
 ```
 
+If you also want a JSON quality report:
+
+```bash
+cv-generator-score --pdf output/cv.pdf --json-out output/cv-report.json
+```
+
 ## Files In This Repo
 
-- [candidate-profile.template.yaml](/Users/selcukcihan/code/cv-generator/candidate-profile.template.yaml): example profile you can copy
-- [candidate-profile.schema.json](/Users/selcukcihan/code/cv-generator/candidate-profile.schema.json): checks that your YAML is valid
-- [PRINCIPLES.md](/Users/selcukcihan/code/cv-generator/PRINCIPLES.md): the CV writing rules used by this project
+- [candidate-profile.template.yaml](candidate-profile.template.yaml): example profile you can copy
+- [candidate-profile.schema.json](candidate-profile.schema.json): checks that your YAML is valid
+- [PRINCIPLES.md](PRINCIPLES.md): the CV writing rules used by this project
 
 ## Notes
 
@@ -55,7 +67,8 @@ cv-generator --profile candidate-profile.yaml --out output/cv.pdf --html-out out
 - Skills are a simple flat list.
 - References are included directly from your profile.
 - The tool checks your profile before creating the PDF.
+- You can score the final PDF for bot readability, structure, content, and layout.
 
 ## For Developers
 
-Development, publishing, and release notes live in [PUBLISHING.md](/Users/selcukcihan/code/cv-generator/PUBLISHING.md).
+Development, publishing, and release notes live in [PUBLISHING.md](PUBLISHING.md).

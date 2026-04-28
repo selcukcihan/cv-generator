@@ -72,3 +72,43 @@ export type GenerateCliOptions = {
   theme: ThemeName;
   pageSize: PageSize;
 };
+
+export type CvValidationCategory = "extractability" | "structure" | "content" | "layout";
+
+export type CvValidationFindingSeverity = "info" | "warning" | "error";
+
+export type CvValidationFinding = {
+  category: CvValidationCategory;
+  severity: CvValidationFindingSeverity;
+  message: string;
+  page?: number;
+};
+
+export type CvValidationCategoryScores = {
+  extractability: number;
+  structure: number;
+  content: number;
+  layout: number;
+};
+
+export type CvValidationMetrics = {
+  pageCount: number;
+  totalCharacters: number;
+  totalLines: number;
+  detectedSections: string[];
+  experienceEntryCount: number;
+  experienceBulletCount: number;
+  averageBulletWords: number;
+};
+
+export type CvValidationStatus = "pass" | "pass_with_warnings" | "fail";
+
+export type CvValidationReport = {
+  pdfPath: string;
+  score: number;
+  minScore: number;
+  status: CvValidationStatus;
+  categoryScores: CvValidationCategoryScores;
+  findings: CvValidationFinding[];
+  metrics: CvValidationMetrics;
+};
