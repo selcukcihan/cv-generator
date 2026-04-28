@@ -160,3 +160,7 @@ Let's use the name "scihan" as npm organization name
 Let's update the README file such that we regard it as the user facing document, should be very simple as non-tech people may also read it to use the tool. The tool's help manual must be also simple and useful. For dev related readme stuff let's create a separate file in the repo.
 
 Also create an icon for this project so it appears on github and npm.
+
+## 35
+
+Ok, now let's add a new feature. I want to ensure generated CVs match a certain level of quality in terms of both content, layout and in terms of SEO or bot readability because most of the CVs are first filtered by bots or AI agents before being considered by a real human being. What do you think we can do, how can we validate or score a CV that we generated? I don't want to judge intermediate data or initial data, I want to judge the final generated PDF.
