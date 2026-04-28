@@ -180,3 +180,7 @@ Ok let's go with openresume. But I really do want to keep our CLI tool very simp
 ## 39
 
 Let's create a static documentation website based on github pages. Keep it very simple, just a single page, static content, minimal dependencies and elegant slick design.
+
+## 40
+
+Let's also add opengraph tags for better shareability.
