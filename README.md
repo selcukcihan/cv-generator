@@ -8,6 +8,8 @@ This project started from the resume ideas in [Software Engineer Resume](https:/
 
 Package name: `@scihan/cv-generator`
 
+Documentation site: GitHub Pages from [`docs/index.html`](docs/index.html)
+
 ## What You Need
 
 - Node.js

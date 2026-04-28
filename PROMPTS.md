@@ -176,3 +176,7 @@ Can you do a search to see if there's already tools that we can use to score a C
 ## 38
 
 Ok let's go with openresume. But I really do want to keep our CLI tool very simple. For example, let's not create separate commands for scoring, it would be a command line option to disable scoring otherwise it would automatically score after generating a CV. This tool will be used by non tech people as well. Keep it very very simple on the user interface surface.
+
+## 39
+
+Let's create a static documentation website based on github pages. Keep it very simple, just a single page, static content, minimal dependencies and elegant slick design.

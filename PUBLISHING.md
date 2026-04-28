@@ -6,6 +6,7 @@ This file is for repository and release maintenance.
 
 - npm package: `@scihan/cv-generator`
 - repository: `https://github.com/selcukcihan/cv-generator`
+- docs site source: `docs/index.html`
 
 ## Local Release Checks
 
@@ -36,6 +37,7 @@ Configure npm Trusted Publishing for:
 Workflow file:
 
 - [.github/workflows/release.yml](.github/workflows/release.yml)
+- [.github/workflows/pages.yml](.github/workflows/pages.yml)
 
 ## Release Flow
 
