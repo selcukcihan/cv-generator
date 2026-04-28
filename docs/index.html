@@ -235,6 +235,21 @@
         white-space: pre;
       }
 
+      .code-block {
+        margin-top: 14px;
+        padding: 18px 20px;
+        border-radius: 18px;
+        background: #f8fbfd;
+        border: 1px solid rgba(22, 50, 74, 0.08);
+        overflow-x: auto;
+        color: #18324b;
+        font: 14px/1.55 "SFMono-Regular", "Menlo", "Monaco", monospace;
+      }
+
+      .code-block code {
+        white-space: pre;
+      }
+
       .footer {
         margin-top: 24px;
         padding: 8px 4px 0;
@@ -290,14 +305,27 @@
 
       <section class="grid">
         <article class="card wide">
-          <h2>How it works</h2>
+          <h2>Install and run</h2>
           <ol>
-            <li>Copy the example profile.</li>
+            <li>Install the package with npm, or run it directly with npx.</li>
+            <li>Copy the example YAML file.</li>
             <li>Fill in your own details.</li>
-            <li>Run one command to generate the PDF.</li>
-            <li>Get an automatic quality check on the final PDF.</li>
+            <li>Run the generate command.</li>
           </ol>
-          <div class="terminal"><code>cv-generator --profile candidate-profile.yaml --out output/cv.pdf</code></div>
+          <div class="terminal"><code>npm install -g @scihan/cv-generator
+
+cp candidate-profile.template.yaml candidate-profile.yaml
+
+cv-generator --profile candidate-profile.yaml --out output/cv.pdf</code></div>
+          <div class="mini-actions">
+            <a class="link-chip" href="https://www.npmjs.com/package/@scihan/cv-generator">Install from npm</a>
+          </div>
+        </article>
+
+        <article class="card narrow">
+          <h2>No install option</h2>
+          <p>You can also run it directly with npx:</p>
+          <div class="terminal"><code>npx @scihan/cv-generator --profile candidate-profile.yaml --out output/cv.pdf</code></div>
         </article>
 
         <article class="card narrow">
@@ -316,6 +344,43 @@
             The command line stays intentionally small. Quality scoring runs automatically after generation. If you want to skip it,
             use <code>--no-score</code>.
           </p>
+        </article>
+
+        <article class="card wide">
+          <h2>Example YAML</h2>
+          <p>This is the shape of the input file you edit.</p>
+          <div class="code-block"><code>schema_version: 1
+
+basics:
+  full_name: "Jane Doe"
+  current_title: "Senior Software Engineer"
+  email: "jane@example.com"
+  url: "https://janedoe.dev"
+
+summary: "Experienced engineer focused on backend systems and product delivery."
+
+experience:
+  - title: "Senior Software Engineer"
+    company: "Example Corp"
+    dates: "2021 - Present"
+    url: "https://example.com"
+    descriptions:
+      - "Built internal tools used across multiple teams."
+      - "Improved observability and delivery workflows."
+
+education:
+  - institution: "Example University"
+    degree: "BSc Computer Science"
+    field_of_study: "Computer Science"
+
+certifications: []
+
+skills:
+  - "TypeScript"
+  - "Node.js"
+  - "AWS"
+
+references: []</code></div>
         </article>
 
         <article class="card wide">
