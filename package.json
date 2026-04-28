@@ -1,6 +1,6 @@
 {
   "name": "@scihan/cv-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Deterministic CV generator from structured YAML to PDF",
   "main": "dist/scripts/generate-cv.js",
   "bin": {
