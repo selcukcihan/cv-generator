@@ -255,3 +255,7 @@ Ok fix the url please
 ## 45
 
 Did not work, same 404 error.
+
+## 46
+
+Ok let's remove automated publishing.

@@ -25,15 +25,6 @@ npm publish --access public
 
 The `scihan` npm scope must be owned by the publishing account or organization.
 
-## Trusted Publishing
-
-Configure npm Trusted Publishing for:
-
-- provider: `GitHub Actions`
-- owner: `selcukcihan`
-- repository: `cv-generator`
-- workflow file: `release.yml`
-
 Workflow file:
 
 - [.github/workflows/release.yml](.github/workflows/release.yml)
@@ -44,10 +35,15 @@ Workflow file:
 1. Update the package version.
 2. Commit the version change.
 3. Push a Git tag like `v1.1.0`.
-4. GitHub Actions publishes to npm.
-5. The same workflow creates the matching GitHub Release.
+4. GitHub Actions validates the package and creates the matching GitHub Release.
+5. Publish to npm manually from your machine:
+
+```bash
+npm publish --access public
+```
 
 ## Notes
 
 - `npm pack --dry-run` should stay clean and only include intended files.
 - The build script clears `dist/` before compiling to avoid publishing stale files.
+- npm publishing is manual by design.
