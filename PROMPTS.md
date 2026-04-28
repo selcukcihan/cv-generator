@@ -281,3 +281,7 @@ Main issues:
 - Some lines are very wide and may be hard to scan.
 - Some lines are very wide and may be hard to scan.
 Generated PDF: /Users/selcukcihan/code/silecez/output/cv.pdf
+
+## 50
+
+I don't like the layout of the documents website. There is no strict form, like the "install and run" and "no install option" are on the same row and occupy some space horizontally. But on the next tiles we have "what it checks" and "designed for simplicity" sections which occupy a narrower width. Then we have "Example yaml" on a single column, the column must stretch so it does not look weird, it must fill two columns width. Same with "starting point" as well and "Example CV" as well. So the layout widths are not uniform I think.
