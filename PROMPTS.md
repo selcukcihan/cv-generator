@@ -184,3 +184,7 @@ Let's create a static documentation website based on github pages. Keep it very 
 ## 40
 
 Let's also add opengraph tags for better shareability.
+
+## 41
+
+Would be great to render my example CV on the docs website. Also there's an issue with OG image because https://cv-generator.selcukcihan.com/assets/icon.svg returns 404 and I tried it on twitter and it did not work. While at it, let's update the icon and create a better one. It must look simple, professional, unique and graspable
