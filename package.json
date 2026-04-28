@@ -1,17 +1,45 @@
 {
-  "name": "cv-generator",
+  "name": "@scihan/cv-generator",
   "version": "1.0.0",
   "description": "Deterministic CV generator from structured YAML to PDF",
   "main": "dist/scripts/generate-cv.js",
+  "bin": {
+    "cv-generator": "dist/scripts/generate-cv.js"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\" && tsc -p tsconfig.json",
+    "prepack": "npm run build",
     "validate:profile": "npm run build && node dist/scripts/validate-candidate-profile.js candidate-profile.template.yaml",
     "generate": "npm run build && node dist/scripts/generate-cv.js"
   },
-  "keywords": [],
-  "author": "",
+  "files": [
+    "dist",
+    "candidate-profile.schema.json",
+    "candidate-profile.template.yaml",
+    "PRINCIPLES.md",
+    "README.md"
+  ],
+  "keywords": [
+    "cv",
+    "resume",
+    "pdf",
+    "cli",
+    "yaml"
+  ],
+  "author": "Selcuk Cihan",
   "license": "ISC",
   "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selcukcihan/cv-generator.git"
+  },
+  "homepage": "https://github.com/selcukcihan/cv-generator#readme",
+  "bugs": {
+    "url": "https://github.com/selcukcihan/cv-generator/issues"
+  },
   "dependencies": {
     "ajv": "^8.18.0",
     "puppeteer": "^24.41.0",

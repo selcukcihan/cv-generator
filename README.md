@@ -4,6 +4,8 @@ Deterministic software engineering CV generator.
 
 This project started from the resume principles discussed in [Software Engineer Resume](https://open.substack.com/pub/systemdesignone/p/software-engineer-resume?utm_campaign=post-expanded-share&utm_medium=post%20viewer), and the repository keeps a distilled version of those ideas in `PRINCIPLES.md`.
 
+Published package target: `@scihan/cv-generator`
+
 The generator uses:
 
 - a structured candidate profile in YAML
@@ -34,6 +36,13 @@ npm install
 
 ```bash
 cp candidate-profile.template.yaml candidate-profile.yaml
+```
+
+## CLI Usage After Install
+
+```bash
+npm install -g @scihan/cv-generator
+cv-generator --profile candidate-profile.yaml --out output/cv.pdf
 ```
 
 ## Validate The Profile
@@ -84,3 +93,31 @@ These are the right things to vary per run:
 - The generator validates the candidate profile before trying to generate a CV.
 - The generator deterministically maps profile data to the rendered CV.
 - PDF rendering uses Puppeteer.
+
+## Publishing
+
+Manual first publish:
+
+```bash
+npm login
+npm pack
+npm publish --access public
+```
+
+Then configure npm trusted publishing for this repository and publish future versions from GitHub tags.
+
+Recommended release flow:
+
+1. create a new version in `package.json`
+2. commit it
+3. create and push a tag like `v1.1.0`
+4. let GitHub Actions publish to npm and create the matching GitHub Release
+
+Trusted publisher settings to configure on npm:
+
+- provider: `GitHub Actions`
+- owner: `selcukcihan`
+- repository: `cv-generator`
+- workflow file: `release.yml`
+
+The repository includes `.github/workflows/release.yml` for this flow.

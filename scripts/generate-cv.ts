@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { loadCliOptions, printUsage } from "../src/lib/config";
 import { writeTextFile, resolveFromCwd } from "../src/lib/fs";
 import { loadProfileYaml, validateProfile } from "../src/lib/profile";

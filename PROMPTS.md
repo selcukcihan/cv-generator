@@ -146,3 +146,11 @@ The html version of the CV has no margins on the sides, I want it to be centered
 ## 31
 
 We must mention our starting point and where we derived principles from: https://open.substack.com/pub/systemdesignone/p/software-engineer-resume?utm_campaign=post-expanded-share&utm_medium=post%20viewer
+
+## 32
+
+I want to publish this on npm, how can I do that? Would be good to tie it with github as well so that the npm releases appear there also
+
+## 33
+
+Let's use the name "scihan" as npm organization name
