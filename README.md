@@ -35,11 +35,7 @@ cp candidate-profile.template.yaml candidate-profile.yaml
 cv-generator --profile candidate-profile.yaml --out output/cv.pdf
 ```
 
-5. Score the finished PDF:
-
-```bash
-cv-generator-score --pdf output/cv.pdf
-```
+The tool will also run a simple quality check automatically after generating the PDF. This includes bot readability checks based on OpenResume-style parser heuristics.
 
 ## Optional Outputs
 
@@ -52,7 +48,7 @@ cv-generator --profile candidate-profile.yaml --out output/cv.pdf --html-out out
 If you also want a JSON quality report:
 
 ```bash
-cv-generator-score --pdf output/cv.pdf --json-out output/cv-report.json
+cv-generator --profile candidate-profile.yaml --out output/cv.pdf --score-report-out output/cv-report.json
 ```
 
 ## Files In This Repo
@@ -67,7 +63,8 @@ cv-generator-score --pdf output/cv.pdf --json-out output/cv-report.json
 - Skills are a simple flat list.
 - References are included directly from your profile.
 - The tool checks your profile before creating the PDF.
-- You can score the final PDF for bot readability, structure, content, and layout.
+- The tool also scores the final PDF for bot readability, structure, content, and layout.
+- Use `--no-score` if you want to skip the quality check.
 
 ## For Developers
 

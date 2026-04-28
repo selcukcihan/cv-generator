@@ -69,6 +69,8 @@ export type GenerateCliOptions = {
   outputPdfPath: string;
   outputHtmlPath?: string;
   outputJsonPath?: string;
+  scoreEnabled: boolean;
+  scoreReportPath?: string;
   theme: ThemeName;
   pageSize: PageSize;
 };

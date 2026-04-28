@@ -2,6 +2,7 @@
 
 import { loadCliOptions, printUsage } from "../src/lib/config";
 import { writeTextFile, resolveFromCwd } from "../src/lib/fs";
+import { formatValidationSummary, validateGeneratedPdf } from "../src/lib/pdf-validator";
 import { loadProfileYaml, validateProfile } from "../src/lib/profile";
 import { createRenderableCv } from "../src/lib/renderable-cv";
 import { renderHtml } from "../src/render/html";
@@ -32,12 +33,25 @@ async function main(): Promise<void> {
     writeTextFile(resolveFromCwd(options.outputJsonPath), `${JSON.stringify(renderableCv, null, 2)}\n`);
   }
 
+  let reportPath: string | undefined;
+  if (options.scoreEnabled) {
+    const report = await validateGeneratedPdf(pdfPath);
+    if (options.scoreReportPath) {
+      reportPath = resolveFromCwd(options.scoreReportPath);
+      writeTextFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
+    }
+    console.log(formatValidationSummary(report));
+  }
+
   console.log(`Generated PDF: ${pdfPath}`);
   if (options.outputHtmlPath) {
     console.log(`Generated HTML: ${resolveFromCwd(options.outputHtmlPath)}`);
   }
   if (options.outputJsonPath) {
     console.log(`Generated JSON: ${resolveFromCwd(options.outputJsonPath)}`);
+  }
+  if (reportPath) {
+    console.log(`Generated quality report: ${reportPath}`);
   }
 }
 

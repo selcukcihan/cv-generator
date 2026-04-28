@@ -2,6 +2,11 @@ import fs from "node:fs";
 
 import { CvValidationCategory, CvValidationCategoryScores, CvValidationFinding, CvValidationMetrics, CvValidationReport, CvValidationStatus } from "./types";
 
+// The parser-side checks here intentionally follow the OpenResume parser's
+// broad approach: read PDF text items, group them into lines, detect resume
+// sections from line patterns, and then score how reliably core fields can be
+// extracted from the final PDF.
+
 type PdfTextItem = {
   str: string;
   transform: number[];
@@ -571,6 +576,23 @@ export function formatValidationReport(report: CvValidationReport): string {
   for (const finding of report.findings) {
     const prefix = finding.page ? `  [${finding.severity}] [${finding.category}] page ${finding.page}` : `  [${finding.severity}] [${finding.category}]`;
     lines.push(`${prefix}: ${finding.message}`);
+  }
+
+  return lines.join("\n");
+}
+
+export function formatValidationSummary(report: CvValidationReport): string {
+  const lines = [
+    `Quality check: ${report.score}/100 (${report.status})`,
+    `Bot readability ${report.categoryScores.extractability}, structure ${report.categoryScores.structure}, content ${report.categoryScores.content}, layout ${report.categoryScores.layout}`
+  ];
+
+  const importantFindings = report.findings.filter((finding) => finding.severity !== "info").slice(0, 3);
+  if (importantFindings.length > 0) {
+    lines.push("Main issues:");
+    for (const finding of importantFindings) {
+      lines.push(`- ${finding.message}`);
+    }
   }
 
   return lines.join("\n");

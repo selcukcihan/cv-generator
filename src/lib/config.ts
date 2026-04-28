@@ -39,6 +39,7 @@ export function loadCliOptions(argv: string[]): GenerateCliOptions {
   const outputPdfPath = typeof args.out === "string" ? args.out : "output/cv.pdf";
   const outputHtmlPath = typeof args["html-out"] === "string" ? args["html-out"] : undefined;
   const outputJsonPath = typeof args["json-out"] === "string" ? args["json-out"] : undefined;
+  const scoreReportPath = typeof args["score-report-out"] === "string" ? args["score-report-out"] : undefined;
 
   const themeValue = typeof args.theme === "string" ? args.theme : "classic";
   if (!isTheme(themeValue)) {
@@ -55,6 +56,8 @@ export function loadCliOptions(argv: string[]): GenerateCliOptions {
     outputPdfPath,
     outputHtmlPath,
     outputJsonPath,
+    scoreEnabled: args["no-score"] !== true,
+    scoreReportPath,
     theme: themeValue,
     pageSize: pageSizeValue
   };
@@ -74,6 +77,8 @@ export function printUsage(): string {
     "  --out <path>        Where the PDF should be written",
     "  --html-out <path>   Also save an HTML copy",
     "  --json-out <path>   Also save the rendered JSON",
+    "  --no-score          Skip the automatic quality check",
+    "  --score-report-out <path> Save the quality report as JSON",
     "  --theme <name>      classic, modern, or compact",
     "  --page-size <name>  A4 or Letter",
     "",

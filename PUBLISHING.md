@@ -12,7 +12,7 @@ This file is for repository and release maintenance.
 ```bash
 npm run build
 npm pack --dry-run
-npm run score:pdf -- --pdf output/cv.pdf
+npm run generate -- --profile candidate-profile.yaml --out output/cv.pdf --score-report-out output/cv-report.json
 ```
 
 ## First Publish
