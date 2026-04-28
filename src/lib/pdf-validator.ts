@@ -587,7 +587,10 @@ export function formatValidationSummary(report: CvValidationReport): string {
     `Bot readability ${report.categoryScores.extractability}, structure ${report.categoryScores.structure}, content ${report.categoryScores.content}, layout ${report.categoryScores.layout}`
   ];
 
-  const importantFindings = report.findings.filter((finding) => finding.severity !== "info").slice(0, 3);
+  const importantFindings = report.findings
+    .filter((finding) => finding.severity !== "info")
+    .filter((finding, index, findings) => findings.findIndex((candidate) => candidate.message === finding.message) === index)
+    .slice(0, 3);
   if (importantFindings.length > 0) {
     lines.push("Main issues:");
     for (const finding of importantFindings) {

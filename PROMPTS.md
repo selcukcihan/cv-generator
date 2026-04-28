@@ -267,3 +267,17 @@ One thing we should also fix, the public facing docs website does not mention ho
 ## 48
 
 I tried to follow the docs on the website, I installed the npm package. Then I tried "cp candidate-profile.template.yaml candidate-profile.yaml" but since there's no candidate.profile.template.yaml it failed. I think we must have a bootstrap command to initialize a candidate-profile.yaml file
+
+## 49
+
+Ok it worked fine, but I tried it on my own cv and got a weird behaviour where some issues are duplicately listed. I think we should list an issue once regardless of how many times it occurs.
+
+➜  silecez cv-generator --profile candidate-profile.yaml --out output/cv.pdf
+
+Quality check: 96/100 (pass_with_warnings)
+Bot readability 100, structure 100, content 95, layout 80
+Main issues:
+- Detected filler phrasing such as "worked on".
+- Some lines are very wide and may be hard to scan.
+- Some lines are very wide and may be hard to scan.
+Generated PDF: /Users/selcukcihan/code/silecez/output/cv.pdf
