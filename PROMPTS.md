@@ -188,3 +188,66 @@ Let's also add opengraph tags for better shareability.
 ## 41
 
 Would be great to render my example CV on the docs website. Also there's an issue with OG image because https://cv-generator.selcukcihan.com/assets/icon.svg returns 404 and I tried it on twitter and it did not work. While at it, let's update the icon and create a better one. It must look simple, professional, unique and graspable
+
+## 42
+
+I tried releasing version 1.0.2 but on github the "Publish to npm" step failed with
+
+2s
+Run npm publish
+
+> @scihan/cv-generator@1.0.2 prepack
+> npm run build
+
+
+> @scihan/cv-generator@1.0.2 build
+> node -e "require('fs').rmSync('dist', { recursive: true, force: true })" && tsc -p tsconfig.json
+
+npm notice
+npm notice 📦  @scihan/cv-generator@1.0.2
+npm notice Tarball Contents
+npm notice 10.1kB PRINCIPLES.md
+npm notice 2.1kB README.md
+npm notice 1.3kB assets/icon.svg
+npm notice 4.8kB candidate-profile.schema.json
+npm notice 522B candidate-profile.template.yaml
+npm notice 6.4kB dist/candidate-profile.schema.json
+npm notice 2.4kB dist/scripts/generate-cv.js
+npm notice 540B dist/scripts/validate-candidate-profile.js
+npm notice 3.0kB dist/src/lib/config.js
+npm notice 1.0kB dist/src/lib/fs.js
+npm notice 19.0kB dist/src/lib/pdf-validator.js
+npm notice 1.6kB dist/src/lib/profile.js
+npm notice 2.1kB dist/src/lib/renderable-cv.js
+npm notice 77B dist/src/lib/types.js
+npm notice 9.8kB dist/src/render/html.js
+npm notice 1.1kB dist/src/render/pdf.js
+npm notice 1.4kB package.json
+npm notice Tarball Details
+npm notice name: @scihan/cv-generator
+npm notice version: 1.0.2
+npm notice filename: scihan-cv-generator-1.0.2.tgz
+npm notice package size: 17.6 kB
+npm notice unpacked size: 67.2 kB
+npm notice shasum: 2702a79b49967764fc597bbba5d29931f4f81610
+npm notice integrity: sha512-rRSQHDLvatkw0[...]/YMd5mPIugdEQ==
+npm notice total files: 17
+npm notice
+npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
+npm error code E404
+npm error 404 Not Found - PUT https://registry.npmjs.org/@scihan%2fcv-generator - Not found
+npm error 404
+npm error 404  '@scihan/cv-generator@1.0.2' is not in this registry.
+npm error 404
+npm error 404 Note that you can also install from a
+npm error 404 tarball, folder, http url, or git url.
+npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-04-28T14_54_41_474Z-debug-0.log
+Error: Process completed with exit code 1.
+
+## 43
+
+No, I made sure it is manually published on npm and npm has the trusted publishing set up but it still fails with the same 404 error on github actions. What setting are we missing? 
+
+## 44
+
+Ok fix the url please
