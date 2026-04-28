@@ -13,6 +13,7 @@
     "generate": "npm run build && node dist/scripts/generate-cv.js"
   },
   "files": [
+    "assets",
     "dist",
     "candidate-profile.schema.json",
     "candidate-profile.template.yaml",

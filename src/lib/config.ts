@@ -62,14 +62,23 @@ export function loadCliOptions(argv: string[]): GenerateCliOptions {
 
 export function printUsage(): string {
   return [
-    "Usage: npm run generate -- [options]",
+    "CV Generator",
+    "",
+    "Create a PDF CV from a YAML profile.",
+    "",
+    "Usage:",
+    "  cv-generator --profile candidate-profile.yaml --out output/cv.pdf",
     "",
     "Options:",
-    "  --profile <path>       Candidate profile YAML path",
-    "  --out <path>           Output PDF path",
-    "  --html-out <path>      Optional HTML debug output path",
-    "  --json-out <path>      Optional rendered JSON output path",
-    "  --theme <name>         classic | modern | compact",
-    "  --page-size <name>     A4 | Letter"
+    "  --profile <path>    Your YAML profile file",
+    "  --out <path>        Where the PDF should be written",
+    "  --html-out <path>   Also save an HTML copy",
+    "  --json-out <path>   Also save the rendered JSON",
+    "  --theme <name>      classic, modern, or compact",
+    "  --page-size <name>  A4 or Letter",
+    "",
+    "Examples:",
+    "  cv-generator --profile candidate-profile.yaml --out output/cv.pdf",
+    "  cv-generator --profile candidate-profile.yaml --out output/cv.pdf --html-out output/cv.html"
   ].join("\n");
 }

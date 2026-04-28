@@ -154,3 +154,9 @@ I want to publish this on npm, how can I do that? Would be good to tie it with g
 ## 33
 
 Let's use the name "scihan" as npm organization name
+
+## 34
+
+Let's update the README file such that we regard it as the user facing document, should be very simple as non-tech people may also read it to use the tool. The tool's help manual must be also simple and useful. For dev related readme stuff let's create a separate file in the repo.
+
+Also create an icon for this project so it appears on github and npm.

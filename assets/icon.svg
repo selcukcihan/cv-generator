@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">CV Generator icon</title>
+  <desc id="desc">A stylized document icon with CV lettering.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17324d"/>
+      <stop offset="100%" stop-color="#0b6e4f"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="40" fill="url(#bg)"/>
+  <path d="M80 40h74l38 38v138H80z" fill="#f8fafc"/>
+  <path d="M154 40v38h38" fill="#dbe6ef"/>
+  <path d="M154 40l38 38h-38z" fill="#c4d3df"/>
+  <rect x="102" y="102" width="68" height="10" rx="5" fill="#d6dde6"/>
+  <rect x="102" y="124" width="52" height="10" rx="5" fill="#d6dde6"/>
+  <rect x="102" y="146" width="62" height="10" rx="5" fill="#d6dde6"/>
+  <text x="128" y="198" text-anchor="middle" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="48" font-weight="700" fill="#183153">CV</text>
+</svg>
